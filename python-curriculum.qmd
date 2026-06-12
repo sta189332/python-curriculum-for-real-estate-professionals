@@ -2,7 +2,7 @@
 title: "Python for Applied Real Estate and Climate-Risk Analytics"
 subtitle: "A 12-Week Professional Curriculum for Flood Risk, Physical Climate Risk, Transition Risk, Valuation, REITs and Investment Decision-Making"
 author: "[Instructor / Institution / Programme Team]"
-date: "[Insert Date]"
+date: today
 format:
   html:
     toc: true
@@ -22,7 +22,7 @@ execute:
   message: false
 ---
 
-> **Source basis:** This curriculum is designed from the uploaded requirements document, which specifies a beginner-to-intermediate Python pathway for a PhD-trained real estate finance and climate-risk professional, structured over 12 weeks / 90 days at 4-6 hours per week, with direct application to flood risk, physical climate risk, transition risk, real estate pricing, valuation, REITs, investment analytics, reproducible workflows and future dashboard/product development. :contentReference[oaicite:0]{index=0}
+> **Source basis:** This curriculum is designed from the provided curriculum requirements document for applied real estate, flood-risk, physical climate-risk and transition-risk analytics. The requirements specify a beginner-to-intermediate Python pathway for a PhD-trained real estate finance and climate-risk professional, structured over 12 weeks / 90 days at approximately 4-6 hours per week, with direct application to real estate pricing, valuation, REITs, investment analytics, reproducible workflows, dashboards and future research, consultancy and product-development work, which specifies a beginner-to-intermediate Python pathway for a PhD-trained real estate finance and climate-risk professional, structured over 12 weeks / 90 days at 4-6 hours per week, with direct application to flood risk, physical climate risk, transition risk, real estate pricing, valuation, REITs, investment analytics, reproducible workflows and future dashboard/product development. 
 
 # Programme Title
 
@@ -81,6 +81,19 @@ By the end of the 12-week programme, the learner should be able to:
 14. Communicate real estate climate-risk findings to academic, investor, policy, valuation and consultancy audiences through technical reports, dashboards and professional presentations.
 15. Design a progression route from beginner-to-intermediate Python competence toward advanced econometrics, spatial modelling, causal inference, climate scenario analysis, portfolio analytics and research publication.
 
+# Pre-Programme Diagnostic and Onboarding
+
+Before Week 1, the instructor should conduct a short diagnostic and onboarding process. This is not a gatekeeping test; it is used to calibrate examples, pacing, software support and capstone direction.
+
+| Diagnostic area | What to check | Instructional response |
+|---|---|---|
+| Python readiness | Prior exposure to programming, notebooks, scripts and command-line tools. | Provide starter syntax support and avoid assuming fluency in debugging. |
+| Data experience | Familiarity with Excel, regression datasets, property-market data, financial data and climate-risk indicators. | Use the learner’s existing research strengths while introducing Python equivalents. |
+| Software setup | Access to Python, JupyterLab, VS Code, Quarto, Git and GitHub. | Resolve installation issues before substantive teaching begins. |
+| Data access | Availability of property, valuation, flood-risk, REIT, ESG, policy or geospatial datasets. | Identify whether public, institutional, commercial, anonymised or synthetic data will be used. |
+| Capstone preference | Interest in flood-risk pricing, dashboard development, REIT shocks or transition-risk text analytics. | Align weekly exercises with the likely final project from Week 5 onward. |
+| Professional output goal | Journal article, grant project, consultancy report, dashboard prototype, teaching material or product concept. | Adapt final deliverables and reporting style to the learner’s intended use. |
+
 # Curriculum Design Principles
 
 The curriculum is guided by eight principles.
@@ -100,6 +113,20 @@ Sixth, **professional communication** is treated as part of analytics. The learn
 Seventh, **project-based assessment** ensures that evidence of competence comes from authentic tasks: cleaning datasets, estimating models, mapping exposure, building dashboards and presenting defensible findings.
 
 Eighth, **portfolio development** ensures that by the end of the programme the learner has a coherent body of work that can support research, consultancy, teaching, grant applications and product development.
+
+# Delivery and Workload Model
+
+The programme is designed as a flexible online professional-learning experience, with optional hybrid support where deeper project workshops or institutional delivery require in-person engagement. Each week assumes approximately 4-6 hours of learner engagement.
+
+| Weekly component | Suggested time | Purpose |
+|---|---:|---|
+| Live teaching session | 90-120 minutes | Introduce concepts, demonstrate Python workflows and connect technical material to real estate climate-risk use cases. |
+| Guided lab or recorded practice | 60-90 minutes | Reinforce the live session through structured coding exercises. |
+| Independent practice task | 90-120 minutes | Build weekly portfolio artifacts using property, climate-risk, financial, geospatial or text data. |
+| Documentation and reflection | 30-60 minutes | Record assumptions, write short interpretation notes and maintain Quarto/GitHub documentation. |
+| Capstone development | 30-60 minutes from Week 5 onward | Gradually build the final applied project rather than leaving it until the end of the programme. |
+
+The delivery model should remain practical and output-driven. Each week should produce a concrete artifact, such as a cleaned dataset, data-quality report, EDA notebook, regression report, model card, geospatial map, NLP summary, dashboard prototype or capstone component.
 
 # Required Tools and Technical Setup
 
@@ -133,7 +160,7 @@ Recommended project structure:
 | `README.md` | Project overview and usage instructions. |
 | `requirements.txt` or `environment.yml` | Package and environment specification. |
 
-# Core Python Libraries
+# Core Python Libraries and Workflow Tools
 
 | Library / Tool | Curriculum Purpose | Applied Use in Real Estate and Climate-Risk Analytics |
 |---|---|---|
@@ -164,20 +191,26 @@ Recommended project structure:
 
 # Full 12-Week Curriculum Map
 
-| Week | Theme | Main Topic | Learning Outcomes | Python Concepts | Domain Focus | Recommended Libraries | Practical Exercise | Dataset or Data Type | Independent Task | Expected Output / Portfolio Artifact |
-|---:|---|---|---|---|---|---|---|---|---|---|
-| 1 | Orientation and setup | Python, notebooks, Quarto and real estate climate-risk framing | Set up environment; understand workflow; connect Python to domain problems | Scripts, notebooks, cells, comments, basic expressions | Why climate risk matters for pricing, valuation and investment | Python, JupyterLab, VS Code, Quarto, Git | Create a project folder and first notebook analysing a small property-risk table | Small synthetic property and risk dataset | Write a one-page analytic problem statement | Project repository skeleton and Quarto orientation note |
-| 2 | Python foundations | Variables, data types, functions, loops, conditionals | Write basic Python logic for property and climate-risk variables | Strings, numbers, lists, dictionaries, functions, loops, conditionals | Encoding property attributes, risk flags and investment categories | Python standard library | Create functions to classify property risk and investment status | Example property records | Build a reusable property-risk classifier | Notebook with documented Python foundations |
-| 3 | Data acquisition and cleaning | Excel, CSV, APIs, missing values, joins and data quality | Import, inspect, clean and validate real estate datasets | Reading files, data frames, missing values, joins, validation checks | Property transactions, valuation records, EPC indicators and flood-risk fields | pandas, numpy, requests | Clean a transaction dataset and join risk indicators | Excel/CSV/API example datasets | Create a data-quality report | Cleaned dataset and data-quality notebook |
-| 4 | Data management with pandas and NumPy | Data transformation for property, climate and financial data | Transform, merge, aggregate and reshape datasets | Grouping, merging, filtering, pivoting, vectorised operations | Local authority summaries, exposure rates and value bands | pandas, numpy | Build local authority exposure and valuation summaries | Property, climate-risk and local authority data | Produce a reusable transformation script | Processed data table and transformation notebook |
-| 5 | EDA and visualisation | Professional charts and exploratory analysis | Produce charts and tables for analytical interpretation | Plotting, distributions, correlations, grouped summaries | Flood-risk exposure, price distributions and market segmentation | matplotlib, seaborn, plotly | Visualise price distributions by flood-risk category | Property transactions and flood-risk flags | Prepare an EDA brief for a valuation audience | EDA notebook and visual summary |
-| 6 | Regression and econometrics | Real estate pricing and flood-risk capitalisation | Estimate and interpret regression models | OLS, dummy variables, interaction terms, diagnostics | Price discounts, flood-risk capitalisation and valuation adjustment | statsmodels, scipy, pandas, seaborn | Estimate a hedonic price model with flood-risk indicators | Transaction, property attributes and flood-risk data | Write a regression interpretation memo | Quarto regression report |
-| 7 | Machine learning | Prediction, classification and risk scoring | Build supervised models and evaluate performance | Train/test split, preprocessing, pipelines, metrics | Exposure scoring, vulnerability classification, asset resilience | scikit-learn, pandas, numpy, plotly | Predict high-risk assets or price discount categories | Property, climate-risk and vulnerability indicators | Compare interpretable and predictive models | Machine-learning notebook and model card |
-| 8 | Time-series analytics | REITs, housing prices, rates, inflation and shocks | Analyse market dynamics and shock relationships | Date parsing, time indexes, returns, rolling windows, volatility | REIT volatility, infrastructure shocks, interest rates and climate events | pandas, statsmodels, yfinance, matplotlib, plotly | Model REIT returns around climate or infrastructure shock dates | REIT prices, rates, inflation, event indicators | Create a time-series risk note | Time-series analysis notebook |
-| 9 | Geospatial analytics | Mapping flood risk, exposure and local vulnerability | Conduct spatial joins and produce maps | Geometries, coordinate systems, spatial joins, buffers | Property location, flood zones, local authorities, exposure | geopandas, shapely, folium, rasterio/xarray where appropriate | Map properties against flood-risk zones | Property coordinates, boundaries, flood layers | Produce an exposure map for one case area | Geospatial notebook and interactive map |
-| 10 | NLP and transition risk | ESG, policy, planning and market sentiment text analytics | Extract transition-risk signals from documents | Text cleaning, tokenisation, TF-IDF, classification | ESG regulation, stranded assets, planning policy, disclosure | nltk, spaCy, scikit-learn, pandas | Analyse ESG or planning documents for transition-risk keywords | ESG reports, policy texts, planning documents | Build a transition-risk signal dictionary | NLP notebook and document-risk summary |
-| 11 | Dashboards | Climate-risk communication through Streamlit or Dash | Build a prototype decision-support dashboard | App structure, widgets, filters, charts, maps | Investor, valuer, insurer, policymaker and asset-manager use cases | streamlit or dash, plotly, pandas, folium | Build a property climate-risk dashboard prototype | Processed property, risk and map data | Prepare dashboard documentation | Working dashboard prototype |
-| 12 | Capstone integration | Reproducible workflow, GitHub, Quarto report and presentation | Integrate data, models, maps, dashboard and reporting | Project packaging, documentation, version control | Applied research, consultancy and product pathway | Git, GitHub, Quarto, selected project libraries | Present capstone workflow and findings | Learner-selected capstone dataset | Complete final project and presentation | GitHub repository, Quarto report and presentation |
+The curriculum map below preserves the full 12-week progression while using a PDF-safe structure. Each week identifies the theme, technical focus, domain application, main exercise, dataset type and portfolio artifact.
+
+| Week | Theme | Technical focus | Domain application | Portfolio artifact |
+|---:|---|---|---|---|
+| 1 | Orientation and setup | Python, JupyterLab, VS Code, Quarto, Git and project folders | Framing Python as a real estate climate-risk analytics workflow | Project repository skeleton and Quarto orientation note |
+| 2 | Python foundations | Variables, data types, functions, loops, conditionals and basic control flow | Property attributes, climate-risk flags and investment-risk classification | Python foundations notebook with documented classifier |
+| 3 | Data import and cleaning | Excel, CSV, APIs, missing values, joins, validation and data dictionaries | Property transaction records, valuation data, EPC fields and flood-risk indicators | Cleaned dataset and data-quality report |
+| 4 | Data management | pandas, NumPy, filtering, grouping, merging, pivoting and feature construction | Local authority summaries, exposure rates, price bands and valuation indicators | Processed analysis-ready dataset |
+| 5 | EDA and visualisation | Summary statistics, distributions, grouped comparisons, correlations and professional charts | Flood-risk exposure, price distributions and market segmentation | EDA notebook and visual brief |
+| 6 | Regression and econometrics | OLS, hedonic pricing, controls, dummy variables, interactions and diagnostics | Flood-risk capitalisation, price discounts and valuation adjustment | Quarto regression report |
+| 7 | Machine learning | Train/test split, preprocessing, pipelines, classification, prediction and model evaluation | Exposure scoring, vulnerability classification, price-discount prediction and resilience screening | Machine-learning notebook and model card |
+| 8 | Time-series analytics | Date indexes, returns, rolling windows, volatility, event indicators and basic time-series models | REIT returns, housing prices, interest rates, inflation, infrastructure shocks and climate events | Time-series risk note |
+| 9 | Geospatial analytics | GeoPandas, Shapely, Folium, coordinate systems, spatial joins, buffers and mapping | Property locations, flood zones, local authority boundaries and vulnerability indicators | Interactive flood-risk exposure map |
+| 10 | NLP and transition risk | Text cleaning, tokenisation, keyword dictionaries, TF-IDF and document comparison | ESG reports, planning documents, policy texts, disclosures and transition-risk signals | NLP transition-risk analysis |
+| 11 | Dashboards | Streamlit or Dash, filters, charts, maps, user stories and deployment basics | Climate-risk communication for investors, valuers, insurers, policymakers and asset managers | Dashboard prototype and user guide |
+| 12 | Capstone integration | GitHub, Quarto report, reproducible workflow, model communication and presentation | Research, consultancy, grant, investment or product-development use case | Final repository, Quarto report and presentation |
+
+## Weekly Progression Logic
+
+Weeks 1-2 establish Python foundations using property and climate-risk examples. Weeks 3-5 build data wrangling and exploratory-analysis competence. Weeks 6-8 introduce statistical, econometric, machine-learning and time-series methods for pricing, valuation, investment and market-shock analysis. Weeks 9-11 extend the learner into geospatial analytics, NLP and dashboard development. Week 12 integrates the full workflow into a capstone project suitable for research, consultancy, grant-funded work or product-development extension.
 
 # Weekly Teaching Plan
 
@@ -513,6 +546,20 @@ The programme should use datasets that reflect the learner’s intended research
 | Insurance affordability indicators | Premiums, coverage availability, claims exposure, insurer withdrawal | Mortgageability and liquidity analysis | Often restricted; use proxy indicators if direct data unavailable. |
 | Mortgageability indicators | Lending restrictions, loan-to-value constraints, risk flags | Investment and liquidity analysis | Commercial or institutional source to be verified. |
 
+# Starter Data Schema Templates
+
+The following starter schemas can be used to prepare teaching datasets. They may be populated with public, institutional, commercial, anonymised or synthetic data, depending on access rights and ethical constraints.
+
+| Dataset | Minimum fields | Notes |
+|---|---|---|
+| Property transaction dataset | `property_id`, `sale_date`, `sale_price`, `property_type`, `tenure`, `floor_area`, `postcode_or_area`, `local_authority` | Use anonymised or aggregated data where property-level confidentiality applies. |
+| Flood-risk indicator dataset | `property_id` or `area_id`, `flood_risk_band`, `flood_zone`, `exposure_score`, `defence_status`, `data_year` | Source should be verified through environmental agencies, local authorities or approved data providers. |
+| EPC / energy-efficiency dataset | `property_id` or `area_id`, `epc_rating`, `energy_consumption`, `emissions_estimate`, `certificate_date` | Use for transition-risk and stranded-asset exercises. |
+| Local authority vulnerability dataset | `local_authority`, `income_proxy`, `deprivation_index`, `housing_stock_indicator`, `infrastructure_indicator`, `vulnerability_score` | Indicators should be adapted to the relevant country and data availability. |
+| REIT / financial time-series dataset | `date`, `ticker`, `adjusted_close`, `return`, `market_index`, `interest_rate`, `inflation_rate`, `shock_indicator` | Financial data access and licensing must be checked before use. |
+| ESG / policy text corpus | `document_id`, `organisation`, `document_type`, `year`, `text`, `source_url`, `usage_rights_note` | Use only documents with appropriate access rights and record provenance. |
+| Geospatial boundary dataset | `area_id`, `local_authority`, `geometry`, `crs`, `boundary_year` | Coordinate reference systems must be checked before spatial joins. |
+
 # Practical Exercises
 
 | Week | Exercise Title | Task | Expected Output |
@@ -543,6 +590,40 @@ The assessment structure should be practical, cumulative and portfolio-oriented.
 | Final capstone project | 25% | End-to-end applied project selected from the capstone options. | Data workflow, model, map/dashboard and Quarto report. |
 | Professional presentation or report defence | 10% | Concise presentation of the capstone problem, method, findings, limitations and stakeholder relevance. | Slide deck, oral presentation or recorded walkthrough. |
 | **Total** | **100%** |  |  |
+
+# Mid-Programme Mini-Project Brief
+
+The mid-programme mini-project should be completed after Week 6. It is designed to test whether the learner can move from raw data to a defensible early-stage analytical report before entering the machine-learning, time-series, geospatial, NLP and dashboard modules.
+
+## Mini-Project Title
+
+**Flood-Risk Exposure and Property Price Patterns: A Python-Based Exploratory and Regression Analysis**
+
+## Required Tasks
+
+1. Import a property transaction dataset and a flood-risk indicator dataset.
+2. Clean the datasets, correct data types and document missing values.
+3. Merge property and risk indicators using a defensible join key.
+4. Produce summary statistics by flood-risk band, local authority or property type.
+5. Create at least three professional visualisations showing price, exposure or market-segmentation patterns.
+6. Estimate one preliminary regression model linking property price or log price to flood-risk indicators and basic controls.
+7. Write a short Quarto report explaining the data, cleaning decisions, exploratory findings, model output, limitations and implications for valuation or investment decision-making.
+
+## Expected Submission
+
+The mini-project submission should include:
+
+- a cleaned dataset or reproducible cleaning script;
+- a Jupyter notebook or Python script;
+- a Quarto mini-report;
+- at least three charts or tables;
+- one preliminary regression model;
+- a short limitations section;
+- a README file explaining how to reproduce the work.
+
+## Assessment Emphasis
+
+The mini-project should be assessed for data cleaning, analytical reasoning, clarity of interpretation, appropriate regression use, reproducibility and relevance to flood-risk capitalisation or property valuation.
 
 # Assessment Rubric
 
@@ -825,6 +906,21 @@ The report should include corpus description, text-cleaning method, transition-r
 ### Extension potential
 
 The project can support ESG research, policy analysis, transition-risk screening, investor reporting, journal publication or development of a larger document-intelligence tool.
+
+# Capstone Milestone Schedule
+
+The capstone should be selected early and developed progressively. This prevents the final project from becoming an isolated end-of-course assignment.
+
+| Programme point | Capstone milestone | Expected evidence |
+|---|---|---|
+| End of Week 3 | Provisional capstone selection | One-paragraph project rationale and likely data sources. |
+| End of Week 5 | Data and EDA checkpoint | Draft dataset, cleaning log and exploratory charts. |
+| End of Week 6 | Preliminary modelling checkpoint | Regression or baseline analytical model, with limitations. |
+| End of Week 8 | Advanced analytics checkpoint | Machine-learning, time-series or expanded modelling component, depending on project type. |
+| End of Week 9 | Spatial or exposure integration checkpoint | Map, spatial join or area-level exposure summary where relevant. |
+| End of Week 10 | Text or transition-risk checkpoint | NLP component where relevant, especially for ESG, policy or planning documents. |
+| End of Week 11 | Dashboard or communication checkpoint | Dashboard prototype, visual report or stakeholder-facing output. |
+| Week 12 | Final integration | GitHub repository, Quarto report, presentation and professional interpretation. |
 
 # Recommended Learning Resources
 
