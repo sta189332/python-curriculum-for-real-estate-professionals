@@ -1,0 +1,2659 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="[Instructor / Institution / Programme Team]">
+
+<title>Python for Applied Real Estate and Climate-Risk Analytics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="python-curriculum_files/libs/clipboard/clipboard.min.js"></script>
+<script src="python-curriculum_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="python-curriculum_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="python-curriculum_files/libs/quarto-html/popper.min.js"></script>
+<script src="python-curriculum_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="python-curriculum_files/libs/quarto-html/anchor.min.js"></script>
+<link href="python-curriculum_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="python-curriculum_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="python-curriculum_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="python-curriculum_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="python-curriculum_files/libs/bootstrap/bootstrap-67270d1595a62d14f123c043d4fb2f18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#programme-title" id="toc-programme-title" class="nav-link active" data-scroll-target="#programme-title"><span class="header-section-number">1</span> Programme Title</a></li>
+  <li><a href="#programme-rationale" id="toc-programme-rationale" class="nav-link" data-scroll-target="#programme-rationale"><span class="header-section-number">2</span> Programme Rationale</a></li>
+  <li><a href="#learner-profile" id="toc-learner-profile" class="nav-link" data-scroll-target="#learner-profile"><span class="header-section-number">3</span> Learner Profile</a></li>
+  <li><a href="#programme-aim" id="toc-programme-aim" class="nav-link" data-scroll-target="#programme-aim"><span class="header-section-number">4</span> Programme Aim</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">5</span> Learning Outcomes</a></li>
+  <li><a href="#curriculum-design-principles" id="toc-curriculum-design-principles" class="nav-link" data-scroll-target="#curriculum-design-principles"><span class="header-section-number">6</span> Curriculum Design Principles</a></li>
+  <li><a href="#required-tools-and-technical-setup" id="toc-required-tools-and-technical-setup" class="nav-link" data-scroll-target="#required-tools-and-technical-setup"><span class="header-section-number">7</span> Required Tools and Technical Setup</a></li>
+  <li><a href="#core-python-libraries" id="toc-core-python-libraries" class="nav-link" data-scroll-target="#core-python-libraries"><span class="header-section-number">8</span> Core Python Libraries</a></li>
+  <li><a href="#full-12-week-curriculum-map" id="toc-full-12-week-curriculum-map" class="nav-link" data-scroll-target="#full-12-week-curriculum-map"><span class="header-section-number">9</span> Full 12-Week Curriculum Map</a></li>
+  <li><a href="#weekly-teaching-plan" id="toc-weekly-teaching-plan" class="nav-link" data-scroll-target="#weekly-teaching-plan"><span class="header-section-number">10</span> Weekly Teaching Plan</a>
+  <ul class="collapse">
+  <li><a href="#week-1-python-orientation-environment-setup-and-domain-framing" id="toc-week-1-python-orientation-environment-setup-and-domain-framing" class="nav-link" data-scroll-target="#week-1-python-orientation-environment-setup-and-domain-framing"><span class="header-section-number">10.1</span> Week 1: Python Orientation, Environment Setup and Domain Framing</a></li>
+  <li><a href="#week-2-python-foundations-for-property-and-climate-risk-logic" id="toc-week-2-python-foundations-for-property-and-climate-risk-logic" class="nav-link" data-scroll-target="#week-2-python-foundations-for-property-and-climate-risk-logic"><span class="header-section-number">10.2</span> Week 2: Python Foundations for Property and Climate-Risk Logic</a></li>
+  <li><a href="#week-3-data-import-cleaning-and-quality-assurance" id="toc-week-3-data-import-cleaning-and-quality-assurance" class="nav-link" data-scroll-target="#week-3-data-import-cleaning-and-quality-assurance"><span class="header-section-number">10.3</span> Week 3: Data Import, Cleaning and Quality Assurance</a></li>
+  <li><a href="#week-4-data-management-with-pandas-and-numpy" id="toc-week-4-data-management-with-pandas-and-numpy" class="nav-link" data-scroll-target="#week-4-data-management-with-pandas-and-numpy"><span class="header-section-number">10.4</span> Week 4: Data Management with pandas and NumPy</a></li>
+  <li><a href="#week-5-exploratory-data-analysis-and-professional-visualisation" id="toc-week-5-exploratory-data-analysis-and-professional-visualisation" class="nav-link" data-scroll-target="#week-5-exploratory-data-analysis-and-professional-visualisation"><span class="header-section-number">10.5</span> Week 5: Exploratory Data Analysis and Professional Visualisation</a></li>
+  <li><a href="#week-6-regression-and-econometric-modelling-for-real-estate-pricing" id="toc-week-6-regression-and-econometric-modelling-for-real-estate-pricing" class="nav-link" data-scroll-target="#week-6-regression-and-econometric-modelling-for-real-estate-pricing"><span class="header-section-number">10.6</span> Week 6: Regression and Econometric Modelling for Real Estate Pricing</a></li>
+  <li><a href="#week-7-machine-learning-for-prediction-classification-and-risk-scoring" id="toc-week-7-machine-learning-for-prediction-classification-and-risk-scoring" class="nav-link" data-scroll-target="#week-7-machine-learning-for-prediction-classification-and-risk-scoring"><span class="header-section-number">10.7</span> Week 7: Machine Learning for Prediction, Classification and Risk Scoring</a></li>
+  <li><a href="#week-8-time-series-analysis-for-reits-housing-prices-and-market-shocks" id="toc-week-8-time-series-analysis-for-reits-housing-prices-and-market-shocks" class="nav-link" data-scroll-target="#week-8-time-series-analysis-for-reits-housing-prices-and-market-shocks"><span class="header-section-number">10.8</span> Week 8: Time-Series Analysis for REITs, Housing Prices and Market Shocks</a></li>
+  <li><a href="#week-9-geospatial-analytics-for-flood-exposure-and-local-vulnerability" id="toc-week-9-geospatial-analytics-for-flood-exposure-and-local-vulnerability" class="nav-link" data-scroll-target="#week-9-geospatial-analytics-for-flood-exposure-and-local-vulnerability"><span class="header-section-number">10.9</span> Week 9: Geospatial Analytics for Flood Exposure and Local Vulnerability</a></li>
+  <li><a href="#week-10-nlp-for-esg-planning-policy-and-transition-risk-signals" id="toc-week-10-nlp-for-esg-planning-policy-and-transition-risk-signals" class="nav-link" data-scroll-target="#week-10-nlp-for-esg-planning-policy-and-transition-risk-signals"><span class="header-section-number">10.10</span> Week 10: NLP for ESG, Planning, Policy and Transition-Risk Signals</a></li>
+  <li><a href="#week-11-dashboard-development-for-real-estate-climate-risk-communication" id="toc-week-11-dashboard-development-for-real-estate-climate-risk-communication" class="nav-link" data-scroll-target="#week-11-dashboard-development-for-real-estate-climate-risk-communication"><span class="header-section-number">10.11</span> Week 11: Dashboard Development for Real Estate Climate-Risk Communication</a></li>
+  <li><a href="#week-12-capstone-integration-reproducibility-and-professional-presentation" id="toc-week-12-capstone-integration-reproducibility-and-professional-presentation" class="nav-link" data-scroll-target="#week-12-capstone-integration-reproducibility-and-professional-presentation"><span class="header-section-number">10.12</span> Week 12: Capstone Integration, Reproducibility and Professional Presentation</a></li>
+  </ul></li>
+  <li><a href="#applied-dataset-strategy" id="toc-applied-dataset-strategy" class="nav-link" data-scroll-target="#applied-dataset-strategy"><span class="header-section-number">11</span> Applied Dataset Strategy</a></li>
+  <li><a href="#practical-exercises" id="toc-practical-exercises" class="nav-link" data-scroll-target="#practical-exercises"><span class="header-section-number">12</span> Practical Exercises</a></li>
+  <li><a href="#assessment-design" id="toc-assessment-design" class="nav-link" data-scroll-target="#assessment-design"><span class="header-section-number">13</span> Assessment Design</a></li>
+  <li><a href="#assessment-rubric" id="toc-assessment-rubric" class="nav-link" data-scroll-target="#assessment-rubric"><span class="header-section-number">14</span> Assessment Rubric</a></li>
+  <li><a href="#capstone-project-options" id="toc-capstone-project-options" class="nav-link" data-scroll-target="#capstone-project-options"><span class="header-section-number">15</span> Capstone Project Options</a>
+  <ul class="collapse">
+  <li><a href="#capstone-a-flood-risk-and-house-price-analytics-tool" id="toc-capstone-a-flood-risk-and-house-price-analytics-tool" class="nav-link" data-scroll-target="#capstone-a-flood-risk-and-house-price-analytics-tool"><span class="header-section-number">15.1</span> Capstone A: Flood Risk and House Price Analytics Tool</a>
+  <ul class="collapse">
+  <li><a href="#project-rationale" id="toc-project-rationale" class="nav-link" data-scroll-target="#project-rationale"><span class="header-section-number">15.1.1</span> Project rationale</a></li>
+  <li><a href="#research-professional-problem" id="toc-research-professional-problem" class="nav-link" data-scroll-target="#research-professional-problem"><span class="header-section-number">15.1.2</span> Research / professional problem</a></li>
+  <li><a href="#guiding-questions" id="toc-guiding-questions" class="nav-link" data-scroll-target="#guiding-questions"><span class="header-section-number">15.1.3</span> Guiding questions</a></li>
+  <li><a href="#required-data-types" id="toc-required-data-types" class="nav-link" data-scroll-target="#required-data-types"><span class="header-section-number">15.1.4</span> Required data types</a></li>
+  <li><a href="#python-libraries" id="toc-python-libraries" class="nav-link" data-scroll-target="#python-libraries"><span class="header-section-number">15.1.5</span> Python libraries</a></li>
+  <li><a href="#analytic-workflow" id="toc-analytic-workflow" class="nav-link" data-scroll-target="#analytic-workflow"><span class="header-section-number">15.1.6</span> Analytic workflow</a></li>
+  <li><a href="#expected-outputs" id="toc-expected-outputs" class="nav-link" data-scroll-target="#expected-outputs"><span class="header-section-number">15.1.7</span> Expected outputs</a></li>
+  <li><a href="#dashboard-report-expectations" id="toc-dashboard-report-expectations" class="nav-link" data-scroll-target="#dashboard-report-expectations"><span class="header-section-number">15.1.8</span> Dashboard / report expectations</a></li>
+  <li><a href="#assessment-criteria" id="toc-assessment-criteria" class="nav-link" data-scroll-target="#assessment-criteria"><span class="header-section-number">15.1.9</span> Assessment criteria</a></li>
+  <li><a href="#extension-potential" id="toc-extension-potential" class="nav-link" data-scroll-target="#extension-potential"><span class="header-section-number">15.1.10</span> Extension potential</a></li>
+  </ul></li>
+  <li><a href="#capstone-b-climate-risk-property-dashboard" id="toc-capstone-b-climate-risk-property-dashboard" class="nav-link" data-scroll-target="#capstone-b-climate-risk-property-dashboard"><span class="header-section-number">15.2</span> Capstone B: Climate-Risk Property Dashboard</a>
+  <ul class="collapse">
+  <li><a href="#project-rationale-1" id="toc-project-rationale-1" class="nav-link" data-scroll-target="#project-rationale-1"><span class="header-section-number">15.2.1</span> Project rationale</a></li>
+  <li><a href="#research-professional-problem-1" id="toc-research-professional-problem-1" class="nav-link" data-scroll-target="#research-professional-problem-1"><span class="header-section-number">15.2.2</span> Research / professional problem</a></li>
+  <li><a href="#guiding-questions-1" id="toc-guiding-questions-1" class="nav-link" data-scroll-target="#guiding-questions-1"><span class="header-section-number">15.2.3</span> Guiding questions</a></li>
+  <li><a href="#required-data-types-1" id="toc-required-data-types-1" class="nav-link" data-scroll-target="#required-data-types-1"><span class="header-section-number">15.2.4</span> Required data types</a></li>
+  <li><a href="#python-libraries-1" id="toc-python-libraries-1" class="nav-link" data-scroll-target="#python-libraries-1"><span class="header-section-number">15.2.5</span> Python libraries</a></li>
+  <li><a href="#analytic-workflow-1" id="toc-analytic-workflow-1" class="nav-link" data-scroll-target="#analytic-workflow-1"><span class="header-section-number">15.2.6</span> Analytic workflow</a></li>
+  <li><a href="#expected-outputs-1" id="toc-expected-outputs-1" class="nav-link" data-scroll-target="#expected-outputs-1"><span class="header-section-number">15.2.7</span> Expected outputs</a></li>
+  <li><a href="#dashboard-report-expectations-1" id="toc-dashboard-report-expectations-1" class="nav-link" data-scroll-target="#dashboard-report-expectations-1"><span class="header-section-number">15.2.8</span> Dashboard / report expectations</a></li>
+  <li><a href="#assessment-criteria-1" id="toc-assessment-criteria-1" class="nav-link" data-scroll-target="#assessment-criteria-1"><span class="header-section-number">15.2.9</span> Assessment criteria</a></li>
+  <li><a href="#extension-potential-1" id="toc-extension-potential-1" class="nav-link" data-scroll-target="#extension-potential-1"><span class="header-section-number">15.2.10</span> Extension potential</a></li>
+  </ul></li>
+  <li><a href="#capstone-c-reit-climate-and-infrastructure-shock-model" id="toc-capstone-c-reit-climate-and-infrastructure-shock-model" class="nav-link" data-scroll-target="#capstone-c-reit-climate-and-infrastructure-shock-model"><span class="header-section-number">15.3</span> Capstone C: REIT Climate and Infrastructure Shock Model</a>
+  <ul class="collapse">
+  <li><a href="#project-rationale-2" id="toc-project-rationale-2" class="nav-link" data-scroll-target="#project-rationale-2"><span class="header-section-number">15.3.1</span> Project rationale</a></li>
+  <li><a href="#research-professional-problem-2" id="toc-research-professional-problem-2" class="nav-link" data-scroll-target="#research-professional-problem-2"><span class="header-section-number">15.3.2</span> Research / professional problem</a></li>
+  <li><a href="#guiding-questions-2" id="toc-guiding-questions-2" class="nav-link" data-scroll-target="#guiding-questions-2"><span class="header-section-number">15.3.3</span> Guiding questions</a></li>
+  <li><a href="#required-data-types-2" id="toc-required-data-types-2" class="nav-link" data-scroll-target="#required-data-types-2"><span class="header-section-number">15.3.4</span> Required data types</a></li>
+  <li><a href="#python-libraries-2" id="toc-python-libraries-2" class="nav-link" data-scroll-target="#python-libraries-2"><span class="header-section-number">15.3.5</span> Python libraries</a></li>
+  <li><a href="#analytic-workflow-2" id="toc-analytic-workflow-2" class="nav-link" data-scroll-target="#analytic-workflow-2"><span class="header-section-number">15.3.6</span> Analytic workflow</a></li>
+  <li><a href="#expected-outputs-2" id="toc-expected-outputs-2" class="nav-link" data-scroll-target="#expected-outputs-2"><span class="header-section-number">15.3.7</span> Expected outputs</a></li>
+  <li><a href="#dashboard-report-expectations-2" id="toc-dashboard-report-expectations-2" class="nav-link" data-scroll-target="#dashboard-report-expectations-2"><span class="header-section-number">15.3.8</span> Dashboard / report expectations</a></li>
+  <li><a href="#assessment-criteria-2" id="toc-assessment-criteria-2" class="nav-link" data-scroll-target="#assessment-criteria-2"><span class="header-section-number">15.3.9</span> Assessment criteria</a></li>
+  <li><a href="#extension-potential-2" id="toc-extension-potential-2" class="nav-link" data-scroll-target="#extension-potential-2"><span class="header-section-number">15.3.10</span> Extension potential</a></li>
+  </ul></li>
+  <li><a href="#capstone-d-transition-risk-text-analytics-project" id="toc-capstone-d-transition-risk-text-analytics-project" class="nav-link" data-scroll-target="#capstone-d-transition-risk-text-analytics-project"><span class="header-section-number">15.4</span> Capstone D: Transition Risk Text Analytics Project</a>
+  <ul class="collapse">
+  <li><a href="#project-rationale-3" id="toc-project-rationale-3" class="nav-link" data-scroll-target="#project-rationale-3"><span class="header-section-number">15.4.1</span> Project rationale</a></li>
+  <li><a href="#research-professional-problem-3" id="toc-research-professional-problem-3" class="nav-link" data-scroll-target="#research-professional-problem-3"><span class="header-section-number">15.4.2</span> Research / professional problem</a></li>
+  <li><a href="#guiding-questions-3" id="toc-guiding-questions-3" class="nav-link" data-scroll-target="#guiding-questions-3"><span class="header-section-number">15.4.3</span> Guiding questions</a></li>
+  <li><a href="#required-data-types-3" id="toc-required-data-types-3" class="nav-link" data-scroll-target="#required-data-types-3"><span class="header-section-number">15.4.4</span> Required data types</a></li>
+  <li><a href="#python-libraries-3" id="toc-python-libraries-3" class="nav-link" data-scroll-target="#python-libraries-3"><span class="header-section-number">15.4.5</span> Python libraries</a></li>
+  <li><a href="#analytic-workflow-3" id="toc-analytic-workflow-3" class="nav-link" data-scroll-target="#analytic-workflow-3"><span class="header-section-number">15.4.6</span> Analytic workflow</a></li>
+  <li><a href="#expected-outputs-3" id="toc-expected-outputs-3" class="nav-link" data-scroll-target="#expected-outputs-3"><span class="header-section-number">15.4.7</span> Expected outputs</a></li>
+  <li><a href="#dashboard-report-expectations-3" id="toc-dashboard-report-expectations-3" class="nav-link" data-scroll-target="#dashboard-report-expectations-3"><span class="header-section-number">15.4.8</span> Dashboard / report expectations</a></li>
+  <li><a href="#assessment-criteria-3" id="toc-assessment-criteria-3" class="nav-link" data-scroll-target="#assessment-criteria-3"><span class="header-section-number">15.4.9</span> Assessment criteria</a></li>
+  <li><a href="#extension-potential-3" id="toc-extension-potential-3" class="nav-link" data-scroll-target="#extension-potential-3"><span class="header-section-number">15.4.10</span> Extension potential</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#recommended-learning-resources" id="toc-recommended-learning-resources" class="nav-link" data-scroll-target="#recommended-learning-resources"><span class="header-section-number">16</span> Recommended Learning Resources</a></li>
+  <li><a href="#reproducible-workflow-and-mlops-introduction" id="toc-reproducible-workflow-and-mlops-introduction" class="nav-link" data-scroll-target="#reproducible-workflow-and-mlops-introduction"><span class="header-section-number">17</span> Reproducible Workflow and MLOps Introduction</a>
+  <ul class="collapse">
+  <li><a href="#folder-structure" id="toc-folder-structure" class="nav-link" data-scroll-target="#folder-structure"><span class="header-section-number">17.1</span> Folder Structure</a></li>
+  <li><a href="#notebook-discipline" id="toc-notebook-discipline" class="nav-link" data-scroll-target="#notebook-discipline"><span class="header-section-number">17.2</span> Notebook Discipline</a></li>
+  <li><a href="#quarto-reports" id="toc-quarto-reports" class="nav-link" data-scroll-target="#quarto-reports"><span class="header-section-number">17.3</span> Quarto Reports</a></li>
+  <li><a href="#git-and-github" id="toc-git-and-github" class="nav-link" data-scroll-target="#git-and-github"><span class="header-section-number">17.4</span> Git and GitHub</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="header-section-number">17.5</span> Documentation</a></li>
+  <li><a href="#environment-management" id="toc-environment-management" class="nav-link" data-scroll-target="#environment-management"><span class="header-section-number">17.6</span> Environment Management</a></li>
+  <li><a href="#model-versioning-concepts" id="toc-model-versioning-concepts" class="nav-link" data-scroll-target="#model-versioning-concepts"><span class="header-section-number">17.7</span> Model Versioning Concepts</a></li>
+  <li><a href="#basic-deployment-concepts" id="toc-basic-deployment-concepts" class="nav-link" data-scroll-target="#basic-deployment-concepts"><span class="header-section-number">17.8</span> Basic Deployment Concepts</a></li>
+  <li><a href="#ethical-data-handling" id="toc-ethical-data-handling" class="nav-link" data-scroll-target="#ethical-data-handling"><span class="header-section-number">17.9</span> Ethical Data Handling</a></li>
+  <li><a href="#reproducible-research-practices" id="toc-reproducible-research-practices" class="nav-link" data-scroll-target="#reproducible-research-practices"><span class="header-section-number">17.10</span> Reproducible Research Practices</a></li>
+  </ul></li>
+  <li><a href="#professional-outputs-and-portfolio" id="toc-professional-outputs-and-portfolio" class="nav-link" data-scroll-target="#professional-outputs-and-portfolio"><span class="header-section-number">18</span> Professional Outputs and Portfolio</a></li>
+  <li><a href="#progression-route-beyond-12-weeks" id="toc-progression-route-beyond-12-weeks" class="nav-link" data-scroll-target="#progression-route-beyond-12-weeks"><span class="header-section-number">19</span> Progression Route Beyond 12 Weeks</a></li>
+  <li><a href="#alignment-matrix" id="toc-alignment-matrix" class="nav-link" data-scroll-target="#alignment-matrix"><span class="header-section-number">20</span> Alignment Matrix</a></li>
+  <li><a href="#implementation-notes-for-the-instructor" id="toc-implementation-notes-for-the-instructor" class="nav-link" data-scroll-target="#implementation-notes-for-the-instructor"><span class="header-section-number">21</span> Implementation Notes for the Instructor</a></li>
+  <li><a href="#quality-control-checklist" id="toc-quality-control-checklist" class="nav-link" data-scroll-target="#quality-control-checklist"><span class="header-section-number">22</span> Quality-Control Checklist</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="python-curriculum.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Python for Applied Real Estate and Climate-Risk Analytics</h1>
+<p class="subtitle lead">A 12-Week Professional Curriculum for Flood Risk, Physical Climate Risk, Transition Risk, Valuation, REITs and Investment Decision-Making</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>[Instructor / Institution / Programme Team] </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><strong>Source basis:</strong> This curriculum is designed from the uploaded requirements document, which specifies a beginner-to-intermediate Python pathway for a PhD-trained real estate finance and climate-risk professional, structured over 12 weeks / 90 days at 4-6 hours per week, with direct application to flood risk, physical climate risk, transition risk, real estate pricing, valuation, REITs, investment analytics, reproducible workflows and future dashboard/product development. :contentReference<span data-index="0">oaicite:0</span></p>
+</blockquote>
+<section id="programme-title" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Programme Title</h1>
+<p><strong>Python for Applied Real Estate and Climate-Risk Analytics: Flood Risk, Physical Risk, Transition Risk, Valuation and Investment Decision-Making</strong></p>
+<p>This professional curriculum is a 12-week / 90-day applied Python programme for real estate finance, climate-risk analytics, investment research and professional decision-support. It is designed for a serious academic and professional learner who needs Python not as a generic programming language, but as a practical research and analytics environment for collecting, cleaning, modelling, visualising and communicating climate-risk evidence in real estate markets.</p>
+</section>
+<section id="programme-rationale" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Programme Rationale</h1>
+<p>Real estate markets are increasingly exposed to physical climate risk, flood risk, transition risk, insurance stress, mortgageability constraints, infrastructure fragility, energy-performance regulation, ESG reporting expectations and climate-adjusted investment decision-making. These pressures are no longer peripheral to valuation, finance, portfolio strategy or policy analysis. They influence pricing, liquidity, asset resilience, investment risk, stranded-asset exposure, REIT volatility and the long-term credibility of real estate market evidence.</p>
+<p>For a PhD-trained real estate investment and finance professional, the central challenge is not simply learning Python syntax. The challenge is converting advanced conceptual, quantitative and domain knowledge into a reproducible computational workflow. This includes the ability to assemble property, transaction, climate, flood-risk, geospatial, financial and textual datasets; clean and integrate heterogeneous data sources; build defensible analytical models; produce professional visualisations and dashboards; communicate results to academic, investor, policy, valuation and consultancy audiences; and maintain reproducible evidence pipelines suitable for journal articles, grant-funded projects, consultancy reports and future analytic products.</p>
+<p>This curriculum therefore rejects a generic “learn Python” structure. It begins with foundations because the learner’s programming experience is beginner-to-developing, but it moves quickly into applied analytics because the learner’s domain reasoning is already advanced. The programme uses real estate and climate-risk problems from the beginning, so that variables, functions, loops, data frames, regression models, machine-learning workflows, geospatial joins, time-series analysis, NLP and dashboards are introduced through meaningful professional problems rather than abstract coding drills.</p>
+</section>
+<section id="learner-profile" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Learner Profile</h1>
+<p>The intended learner is a PhD-trained academic and professional in real estate investment and finance, with expertise in property market analysis, empirical research design, regression-based analysis, financial and economic interpretation, valuation, investment decision-making and climate-risk research.</p>
+<p>The learner’s current professional and research interests include:</p>
+<ul>
+<li>flood-risk capitalisation in housing markets;</li>
+<li>physical climate risk and property valuation;</li>
+<li>transition risk, stranded assets and ESG regulation;</li>
+<li>real estate pricing, valuation and investment analytics;</li>
+<li>infrastructure resilience and urban resilience;</li>
+<li>housing markets, REITs and climate-adjusted investment strategies;</li>
+<li>insurance affordability, mortgageability and property market liquidity;</li>
+<li>dashboards for investors, valuers, insurers, policymakers, local authorities and asset managers.</li>
+</ul>
+<p>The learner has advanced conceptual, statistical, financial and research knowledge, but should be treated as beginner-to-developing in Python programming. The curriculum must therefore provide clear scaffolding for syntax and computational thinking while respecting the learner’s ability to engage with advanced research questions, modelling logic and interpretation.</p>
+</section>
+<section id="programme-aim" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Programme Aim</h1>
+<p>The aim of this programme is to develop the learner’s capacity to use Python confidently for applied real estate and climate-risk research, professional analytics, consultancy, grant-funded projects, journal publications and future dashboard or product development.</p>
+<p>By the end of the programme, the learner should be able to move from a conceptually formulated real estate climate-risk problem to a complete analytical workflow: identifying suitable data, importing and cleaning datasets, integrating property and climate-risk indicators, conducting exploratory analysis, building statistical and machine-learning models, analysing time-series and geospatial patterns, extracting transition-risk signals from text, building professional visualisations and dashboards, documenting the workflow through Quarto and GitHub, and communicating findings in a rigorous, reproducible and decision-relevant format.</p>
+</section>
+<section id="learning-outcomes" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Learning Outcomes</h1>
+<p>By the end of the 12-week programme, the learner should be able to:</p>
+<ol type="1">
+<li>Set up and manage a professional Python analytics environment using Python, JupyterLab, VS Code, Quarto, Git and GitHub.</li>
+<li>Apply Python foundations, including variables, data types, functions, loops, conditionals and basic control flow, to real estate and climate-risk examples.</li>
+<li>Import, clean, validate and manage Excel, CSV, API, web-sourced, geospatial, financial and textual datasets.</li>
+<li>Use <code>pandas</code> and <code>numpy</code> to structure, transform, merge and summarise property, transaction, valuation, climate-risk and financial datasets.</li>
+<li>Conduct exploratory data analysis on real estate and climate-risk data, including missing-data assessment, distributional analysis, group comparisons, correlation patterns and outlier detection.</li>
+<li>Produce professional charts, tables, maps and interactive visualisations using <code>matplotlib</code>, <code>seaborn</code>, <code>plotly</code>, <code>geopandas</code> and <code>folium</code>.</li>
+<li>Estimate and interpret statistical and econometric models relevant to real estate pricing, flood-risk capitalisation, valuation adjustment and climate-risk exposure.</li>
+<li>Apply machine-learning models for prediction and classification tasks such as exposure scoring, price-discount estimation, vulnerability classification, investment-risk assessment and asset-level resilience screening.</li>
+<li>Analyse time-series data for housing prices, REIT returns, interest rates, inflation, volatility, climate events, infrastructure shocks and energy-market shocks.</li>
+<li>Conduct geospatial analysis using property locations, flood-risk layers, local authority boundaries, vulnerability indicators and climate-exposure measures.</li>
+<li>Use introductory natural language processing to analyse ESG disclosures, planning reports, policy documents and market sentiment for transition-risk signals.</li>
+<li>Build a prototype climate-risk analytics dashboard using Streamlit or Dash.</li>
+<li>Apply reproducible workflow principles, including project folder structure, notebook discipline, Quarto reporting, Git/GitHub version control, documentation and environment management.</li>
+<li>Communicate real estate climate-risk findings to academic, investor, policy, valuation and consultancy audiences through technical reports, dashboards and professional presentations.</li>
+<li>Design a progression route from beginner-to-intermediate Python competence toward advanced econometrics, spatial modelling, causal inference, climate scenario analysis, portfolio analytics and research publication.</li>
+</ol>
+</section>
+<section id="curriculum-design-principles" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Curriculum Design Principles</h1>
+<p>The curriculum is guided by eight principles.</p>
+<p>First, <strong>domain specificity</strong> is treated as non-negotiable. Python is taught through real estate, climate-risk and investment problems from the first week.</p>
+<p>Second, <strong>progressive complexity</strong> structures the programme. The learner starts with syntax and computational logic, then moves into data wrangling, visualisation, regression, machine learning, time series, geospatial analytics, NLP, dashboards and reproducible deployment.</p>
+<p>Third, <strong>research alignment</strong> ensures that weekly activities support the learner’s academic and professional goals: journal articles, grant-funded projects, consultancy outputs, investment reports and future analytical products.</p>
+<p>Fourth, <strong>applied learning</strong> dominates the design. Each week produces a portfolio artifact rather than only theoretical knowledge.</p>
+<p>Fifth, <strong>reproducibility</strong> is built from the beginning through folder structures, notebooks, Quarto reports, version control, documented assumptions and transparent workflows.</p>
+<p>Sixth, <strong>professional communication</strong> is treated as part of analytics. The learner must not only run code but also explain results in ways that are meaningful for valuers, investors, policymakers, insurers, local authorities, asset managers and academic reviewers.</p>
+<p>Seventh, <strong>project-based assessment</strong> ensures that evidence of competence comes from authentic tasks: cleaning datasets, estimating models, mapping exposure, building dashboards and presenting defensible findings.</p>
+<p>Eighth, <strong>portfolio development</strong> ensures that by the end of the programme the learner has a coherent body of work that can support research, consultancy, teaching, grant applications and product development.</p>
+</section>
+<section id="required-tools-and-technical-setup" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Required Tools and Technical Setup</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Curriculum Use</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Python 3.x</td>
+<td>Core programming language</td>
+<td>Provides the computational foundation for data analysis, modelling, visualisation and automation.</td>
+</tr>
+<tr class="even">
+<td>Anaconda or Miniconda</td>
+<td>Environment and package management</td>
+<td>Supports installation of scientific Python libraries and reproducible environments. Miniconda is preferable for lightweight, controlled setups.</td>
+</tr>
+<tr class="odd">
+<td>JupyterLab</td>
+<td>Interactive coding and analysis</td>
+<td>Suitable for exploratory work, teaching, code demonstration, data cleaning and model development.</td>
+</tr>
+<tr class="even">
+<td>VS Code</td>
+<td>Professional code editing</td>
+<td>Supports script development, project navigation, Git integration and transition from notebooks to production-oriented workflows.</td>
+</tr>
+<tr class="odd">
+<td>Git</td>
+<td>Version control</td>
+<td>Enables tracking of changes, reproducibility, rollback and disciplined project management.</td>
+</tr>
+<tr class="even">
+<td>GitHub</td>
+<td>Remote repository and portfolio platform</td>
+<td>Supports professional documentation, project sharing, collaboration and public/private portfolio development.</td>
+</tr>
+<tr class="odd">
+<td>Quarto</td>
+<td>Reproducible reporting</td>
+<td>Allows code, explanation, tables, figures and interpretation to be integrated into HTML/PDF reports.</td>
+</tr>
+<tr class="even">
+<td>Streamlit or Dash</td>
+<td>Dashboard development</td>
+<td>Enables rapid creation of interactive tools for property, flood-risk, transition-risk and investment decision-support.</td>
+</tr>
+<tr class="odd">
+<td>Spreadsheet software</td>
+<td>Data inspection and stakeholder compatibility</td>
+<td>Many property, valuation and consultancy datasets arrive in Excel; the learner must understand how to move between spreadsheet and Python workflows.</td>
+</tr>
+<tr class="even">
+<td>Browser and API tools</td>
+<td>Data acquisition</td>
+<td>Supports access to public datasets, financial data, climate portals, policy documents and web-sourced data where legally and ethically permitted.</td>
+</tr>
+<tr class="odd">
+<td>Package-management file</td>
+<td>Reproducibility</td>
+<td>An <code>environment.yml</code>, <code>requirements.txt</code> or equivalent file should document dependencies.</td>
+</tr>
+</tbody>
+</table>
+<p>Recommended project structure:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder / File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>data_raw/</code></td>
+<td>Original unmodified data, subject to licensing and confidentiality constraints.</td>
+</tr>
+<tr class="even">
+<td><code>data_processed/</code></td>
+<td>Cleaned and analysis-ready data.</td>
+</tr>
+<tr class="odd">
+<td><code>notebooks/</code></td>
+<td>Exploratory Jupyter notebooks.</td>
+</tr>
+<tr class="even">
+<td><code>scripts/</code></td>
+<td>Reusable Python scripts for cleaning, modelling and visualisation.</td>
+</tr>
+<tr class="odd">
+<td><code>reports/</code></td>
+<td>Quarto reports and exported outputs.</td>
+</tr>
+<tr class="even">
+<td><code>dashboards/</code></td>
+<td>Streamlit or Dash application files.</td>
+</tr>
+<tr class="odd">
+<td><code>figures/</code></td>
+<td>Exported charts, maps and dashboard images.</td>
+</tr>
+<tr class="even">
+<td><code>models/</code></td>
+<td>Saved model artifacts where appropriate.</td>
+</tr>
+<tr class="odd">
+<td><code>docs/</code></td>
+<td>Documentation, data dictionary, methodology notes and assumptions.</td>
+</tr>
+<tr class="even">
+<td><code>README.md</code></td>
+<td>Project overview and usage instructions.</td>
+</tr>
+<tr class="odd">
+<td><code>requirements.txt</code> or <code>environment.yml</code></td>
+<td>Package and environment specification.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="core-python-libraries" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Core Python Libraries</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Library / Tool</th>
+<th>Curriculum Purpose</th>
+<th>Applied Use in Real Estate and Climate-Risk Analytics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pandas</code></td>
+<td>Data manipulation and analysis</td>
+<td>Cleaning transaction records, merging property and flood-risk indicators, grouping by local authority, handling valuation data.</td>
+</tr>
+<tr class="even">
+<td><code>numpy</code></td>
+<td>Numerical computing</td>
+<td>Arrays, mathematical operations, transformations, simulation inputs and model preparation.</td>
+</tr>
+<tr class="odd">
+<td><code>matplotlib</code></td>
+<td>Static plotting</td>
+<td>Publication-style charts for house prices, REIT returns, exposure distributions and model diagnostics.</td>
+</tr>
+<tr class="even">
+<td><code>seaborn</code></td>
+<td>Statistical visualisation</td>
+<td>Distribution plots, correlation heatmaps, regression plots and comparative risk visualisations.</td>
+</tr>
+<tr class="odd">
+<td><code>plotly</code></td>
+<td>Interactive visualisation</td>
+<td>Interactive charts for dashboards, investment summaries, time-series exploration and stakeholder communication.</td>
+</tr>
+<tr class="even">
+<td><code>scipy</code></td>
+<td>Scientific and statistical computation</td>
+<td>Statistical tests, distributions and numerical operations where required.</td>
+</tr>
+<tr class="odd">
+<td><code>statsmodels</code></td>
+<td>Statistical and econometric modelling</td>
+<td>OLS regression, model diagnostics, time-series models and interpretable real estate pricing models.</td>
+</tr>
+<tr class="even">
+<td><code>scikit-learn</code></td>
+<td>Machine learning</td>
+<td>Prediction, classification, model evaluation, pipelines and preprocessing for exposure, vulnerability and price-discount models.</td>
+</tr>
+<tr class="odd">
+<td><code>geopandas</code></td>
+<td>Geospatial data analysis</td>
+<td>Reading shapefiles/GeoJSON, spatial joins, local authority boundaries and flood-exposure mapping.</td>
+</tr>
+<tr class="even">
+<td><code>shapely</code></td>
+<td>Geometric operations</td>
+<td>Point-in-polygon analysis, buffers, intersections and distance-based spatial features.</td>
+</tr>
+<tr class="odd">
+<td><code>folium</code></td>
+<td>Interactive web maps</td>
+<td>Flood-risk maps, property exposure maps and local authority risk dashboards.</td>
+</tr>
+<tr class="even">
+<td><code>rasterio</code></td>
+<td>Raster geospatial data</td>
+<td>Climate or flood raster layers where available and legally accessible.</td>
+</tr>
+<tr class="odd">
+<td><code>xarray</code></td>
+<td>Multi-dimensional climate data</td>
+<td>Climate grids, time-indexed climate variables and scenario-oriented datasets where appropriate.</td>
+</tr>
+<tr class="even">
+<td><code>requests</code></td>
+<td>API access</td>
+<td>Downloading public datasets, financial data, policy data and open-data records where API access is permitted.</td>
+</tr>
+<tr class="odd">
+<td><code>beautifulsoup4</code></td>
+<td>Web parsing</td>
+<td>Extracting text or tables from web pages where legally and ethically permitted.</td>
+</tr>
+<tr class="even">
+<td><code>nltk</code></td>
+<td>Introductory NLP</td>
+<td>Tokenisation, stopword removal and basic text analysis for ESG and policy documents.</td>
+</tr>
+<tr class="odd">
+<td><code>spaCy</code></td>
+<td>Applied NLP</td>
+<td>Named entity recognition, linguistic preprocessing and document-level analysis.</td>
+</tr>
+<tr class="even">
+<td><code>scikit-learn</code> text tools</td>
+<td>Text vectorisation and classification</td>
+<td>TF-IDF, document classification and transition-risk signal extraction.</td>
+</tr>
+<tr class="odd">
+<td><code>yfinance</code> or finance-data equivalent</td>
+<td>Financial time-series data</td>
+<td>REIT prices, market indices and finance examples, subject to verification and data-use terms.</td>
+</tr>
+<tr class="even">
+<td><code>streamlit</code></td>
+<td>Rapid dashboard development</td>
+<td>Climate-risk property dashboards and analytic prototypes.</td>
+</tr>
+<tr class="odd">
+<td><code>dash</code></td>
+<td>Advanced dashboard development</td>
+<td>More configurable dashboard applications where needed.</td>
+</tr>
+<tr class="even">
+<td><code>jupyter</code></td>
+<td>Interactive notebooks</td>
+<td>Teaching, experimentation, EDA and model development.</td>
+</tr>
+<tr class="odd">
+<td>Quarto workflow</td>
+<td>Reproducible reporting</td>
+<td>Integrating code, analysis, tables, figures and interpretation into HTML/PDF outputs.</td>
+</tr>
+<tr class="even">
+<td>Git/GitHub workflow</td>
+<td>Reproducibility and professional portfolio</td>
+<td>Version control, collaboration, documentation and project publication.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="full-12-week-curriculum-map" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Full 12-Week Curriculum Map</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Week</th>
+<th>Theme</th>
+<th>Main Topic</th>
+<th>Learning Outcomes</th>
+<th>Python Concepts</th>
+<th>Domain Focus</th>
+<th>Recommended Libraries</th>
+<th>Practical Exercise</th>
+<th>Dataset or Data Type</th>
+<th>Independent Task</th>
+<th>Expected Output / Portfolio Artifact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>Orientation and setup</td>
+<td>Python, notebooks, Quarto and real estate climate-risk framing</td>
+<td>Set up environment; understand workflow; connect Python to domain problems</td>
+<td>Scripts, notebooks, cells, comments, basic expressions</td>
+<td>Why climate risk matters for pricing, valuation and investment</td>
+<td>Python, JupyterLab, VS Code, Quarto, Git</td>
+<td>Create a project folder and first notebook analysing a small property-risk table</td>
+<td>Small synthetic property and risk dataset</td>
+<td>Write a one-page analytic problem statement</td>
+<td>Project repository skeleton and Quarto orientation note</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td>Python foundations</td>
+<td>Variables, data types, functions, loops, conditionals</td>
+<td>Write basic Python logic for property and climate-risk variables</td>
+<td>Strings, numbers, lists, dictionaries, functions, loops, conditionals</td>
+<td>Encoding property attributes, risk flags and investment categories</td>
+<td>Python standard library</td>
+<td>Create functions to classify property risk and investment status</td>
+<td>Example property records</td>
+<td>Build a reusable property-risk classifier</td>
+<td>Notebook with documented Python foundations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td>Data acquisition and cleaning</td>
+<td>Excel, CSV, APIs, missing values, joins and data quality</td>
+<td>Import, inspect, clean and validate real estate datasets</td>
+<td>Reading files, data frames, missing values, joins, validation checks</td>
+<td>Property transactions, valuation records, EPC indicators and flood-risk fields</td>
+<td>pandas, numpy, requests</td>
+<td>Clean a transaction dataset and join risk indicators</td>
+<td>Excel/CSV/API example datasets</td>
+<td>Create a data-quality report</td>
+<td>Cleaned dataset and data-quality notebook</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td>Data management with pandas and NumPy</td>
+<td>Data transformation for property, climate and financial data</td>
+<td>Transform, merge, aggregate and reshape datasets</td>
+<td>Grouping, merging, filtering, pivoting, vectorised operations</td>
+<td>Local authority summaries, exposure rates and value bands</td>
+<td>pandas, numpy</td>
+<td>Build local authority exposure and valuation summaries</td>
+<td>Property, climate-risk and local authority data</td>
+<td>Produce a reusable transformation script</td>
+<td>Processed data table and transformation notebook</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td>EDA and visualisation</td>
+<td>Professional charts and exploratory analysis</td>
+<td>Produce charts and tables for analytical interpretation</td>
+<td>Plotting, distributions, correlations, grouped summaries</td>
+<td>Flood-risk exposure, price distributions and market segmentation</td>
+<td>matplotlib, seaborn, plotly</td>
+<td>Visualise price distributions by flood-risk category</td>
+<td>Property transactions and flood-risk flags</td>
+<td>Prepare an EDA brief for a valuation audience</td>
+<td>EDA notebook and visual summary</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td>Regression and econometrics</td>
+<td>Real estate pricing and flood-risk capitalisation</td>
+<td>Estimate and interpret regression models</td>
+<td>OLS, dummy variables, interaction terms, diagnostics</td>
+<td>Price discounts, flood-risk capitalisation and valuation adjustment</td>
+<td>statsmodels, scipy, pandas, seaborn</td>
+<td>Estimate a hedonic price model with flood-risk indicators</td>
+<td>Transaction, property attributes and flood-risk data</td>
+<td>Write a regression interpretation memo</td>
+<td>Quarto regression report</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td>Machine learning</td>
+<td>Prediction, classification and risk scoring</td>
+<td>Build supervised models and evaluate performance</td>
+<td>Train/test split, preprocessing, pipelines, metrics</td>
+<td>Exposure scoring, vulnerability classification, asset resilience</td>
+<td>scikit-learn, pandas, numpy, plotly</td>
+<td>Predict high-risk assets or price discount categories</td>
+<td>Property, climate-risk and vulnerability indicators</td>
+<td>Compare interpretable and predictive models</td>
+<td>Machine-learning notebook and model card</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td>Time-series analytics</td>
+<td>REITs, housing prices, rates, inflation and shocks</td>
+<td>Analyse market dynamics and shock relationships</td>
+<td>Date parsing, time indexes, returns, rolling windows, volatility</td>
+<td>REIT volatility, infrastructure shocks, interest rates and climate events</td>
+<td>pandas, statsmodels, yfinance, matplotlib, plotly</td>
+<td>Model REIT returns around climate or infrastructure shock dates</td>
+<td>REIT prices, rates, inflation, event indicators</td>
+<td>Create a time-series risk note</td>
+<td>Time-series analysis notebook</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td>Geospatial analytics</td>
+<td>Mapping flood risk, exposure and local vulnerability</td>
+<td>Conduct spatial joins and produce maps</td>
+<td>Geometries, coordinate systems, spatial joins, buffers</td>
+<td>Property location, flood zones, local authorities, exposure</td>
+<td>geopandas, shapely, folium, rasterio/xarray where appropriate</td>
+<td>Map properties against flood-risk zones</td>
+<td>Property coordinates, boundaries, flood layers</td>
+<td>Produce an exposure map for one case area</td>
+<td>Geospatial notebook and interactive map</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td>NLP and transition risk</td>
+<td>ESG, policy, planning and market sentiment text analytics</td>
+<td>Extract transition-risk signals from documents</td>
+<td>Text cleaning, tokenisation, TF-IDF, classification</td>
+<td>ESG regulation, stranded assets, planning policy, disclosure</td>
+<td>nltk, spaCy, scikit-learn, pandas</td>
+<td>Analyse ESG or planning documents for transition-risk keywords</td>
+<td>ESG reports, policy texts, planning documents</td>
+<td>Build a transition-risk signal dictionary</td>
+<td>NLP notebook and document-risk summary</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td>Dashboards</td>
+<td>Climate-risk communication through Streamlit or Dash</td>
+<td>Build a prototype decision-support dashboard</td>
+<td>App structure, widgets, filters, charts, maps</td>
+<td>Investor, valuer, insurer, policymaker and asset-manager use cases</td>
+<td>streamlit or dash, plotly, pandas, folium</td>
+<td>Build a property climate-risk dashboard prototype</td>
+<td>Processed property, risk and map data</td>
+<td>Prepare dashboard documentation</td>
+<td>Working dashboard prototype</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td>Capstone integration</td>
+<td>Reproducible workflow, GitHub, Quarto report and presentation</td>
+<td>Integrate data, models, maps, dashboard and reporting</td>
+<td>Project packaging, documentation, version control</td>
+<td>Applied research, consultancy and product pathway</td>
+<td>Git, GitHub, Quarto, selected project libraries</td>
+<td>Present capstone workflow and findings</td>
+<td>Learner-selected capstone dataset</td>
+<td>Complete final project and presentation</td>
+<td>GitHub repository, Quarto report and presentation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="weekly-teaching-plan" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Weekly Teaching Plan</h1>
+<section id="week-1-python-orientation-environment-setup-and-domain-framing" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="week-1-python-orientation-environment-setup-and-domain-framing"><span class="header-section-number">10.1</span> Week 1: Python Orientation, Environment Setup and Domain Framing</h2>
+<p><strong>Session purpose:</strong> Establish the professional analytics environment and frame Python as a tool for real estate climate-risk evidence rather than generic coding.</p>
+<p><strong>Key concepts:</strong> Python workflow, Jupyter notebooks, VS Code, Quarto, Git, project folders, reproducible reporting, climate-risk analytics pipeline.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Install or verify Python, JupyterLab, VS Code, Quarto and Git.</li>
+<li>Create a programme repository.</li>
+<li>Explain the difference between notebooks, scripts and reports.</li>
+<li>Demonstrate how a property climate-risk problem becomes a data workflow.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Create a small table of property records with columns such as <code>property_id</code>, <code>local_authority</code>, <code>sale_price</code>, <code>flood_risk_band</code>, <code>epc_rating</code> and <code>investment_status</code>.</p>
+<p><strong>Guided lab:</strong> Create a Jupyter notebook and a simple Quarto document summarising a small sample of property-risk data.</p>
+<p><strong>Independent practice:</strong> Write a one-page problem statement on one chosen use case: flood-risk capitalisation, physical risk and valuation, transition risk, REIT shocks or climate-risk dashboard development.</p>
+<p><strong>Suggested readings/resources:</strong> Python official documentation; JupyterLab documentation; Quarto documentation; GitHub Docs; introductory real estate climate-risk reports selected and verified by the instructor.</p>
+<p><strong>Applied use case:</strong> How climate-risk indicators enter property valuation and investment decision-making.</p>
+<p><strong>Deliverable:</strong> Repository skeleton, first notebook and first Quarto note.</p>
+</section>
+<section id="week-2-python-foundations-for-property-and-climate-risk-logic" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="week-2-python-foundations-for-property-and-climate-risk-logic"><span class="header-section-number">10.2</span> Week 2: Python Foundations for Property and Climate-Risk Logic</h2>
+<p><strong>Session purpose:</strong> Build core programming logic using familiar real estate and climate-risk variables.</p>
+<p><strong>Key concepts:</strong> Variables, data types, strings, numbers, lists, dictionaries, functions, loops, conditionals and basic error awareness.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Define property attributes as Python variables.</li>
+<li>Use lists and dictionaries to store property-level information.</li>
+<li>Write simple functions for risk classification.</li>
+<li>Use conditionals to assign risk categories.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Write a function that classifies a property as low, medium or high risk based on flood-risk band, EPC rating and location vulnerability.</p>
+<p><strong>Guided lab:</strong> Create property records and loop through them to assign investment-risk labels.</p>
+<p><strong>Independent practice:</strong> Extend the classifier to include mortgageability, insurance affordability or infrastructure vulnerability indicators.</p>
+<p><strong>Suggested readings/resources:</strong> Python official tutorial; selected beginner Python chapters or open resources; instructor-prepared property-risk coding examples.</p>
+<p><strong>Applied use case:</strong> Translating valuation and investment rules into transparent computational logic.</p>
+<p><strong>Deliverable:</strong> Python foundations notebook with documented functions and classification logic.</p>
+</section>
+<section id="week-3-data-import-cleaning-and-quality-assurance" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="week-3-data-import-cleaning-and-quality-assurance"><span class="header-section-number">10.3</span> Week 3: Data Import, Cleaning and Quality Assurance</h2>
+<p><strong>Session purpose:</strong> Teach the learner to bring real estate and climate-risk data into Python and prepare it for analysis.</p>
+<p><strong>Key concepts:</strong> CSV and Excel import, API basics, column naming, missing values, duplicates, data types, joins, validation checks and data dictionaries.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Import Excel and CSV files.</li>
+<li>Diagnose missing values and inconsistent categories.</li>
+<li>Convert date, numeric and categorical fields.</li>
+<li>Merge transaction data with risk indicators.</li>
+<li>Create a data-quality checklist.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Clean a property transaction dataset and merge it with a flood-risk indicator table.</p>
+<p><strong>Guided lab:</strong> Produce a data-quality report showing missing values, duplicate records, invalid price values and unmatched local authorities.</p>
+<p><strong>Independent practice:</strong> Prepare a cleaned version of a property-climate dataset and document all cleaning decisions.</p>
+<p><strong>Suggested readings/resources:</strong> pandas documentation on input/output, missing data and merging; documentation for relevant open-data portals, to be verified locally.</p>
+<p><strong>Applied use case:</strong> Preparing transaction and flood-risk data for pricing analysis.</p>
+<p><strong>Deliverable:</strong> Cleaned dataset and data-quality notebook.</p>
+</section>
+<section id="week-4-data-management-with-pandas-and-numpy" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="week-4-data-management-with-pandas-and-numpy"><span class="header-section-number">10.4</span> Week 4: Data Management with pandas and NumPy</h2>
+<p><strong>Session purpose:</strong> Build fluency in transforming and summarising large property, climate-risk and financial datasets.</p>
+<p><strong>Key concepts:</strong> Filtering, selecting, grouping, aggregation, pivot tables, reshaping, vectorised operations and feature construction.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Create derived variables such as price per square metre, risk score, EPC category and exposure dummy.</li>
+<li>Aggregate exposure by local authority.</li>
+<li>Compare average prices across risk bands.</li>
+<li>Build reusable transformation steps.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Create a local authority summary table showing number of properties, mean price, flood exposure rate, average EPC score and risk category.</p>
+<p><strong>Guided lab:</strong> Transform raw property and risk datasets into an analysis-ready table.</p>
+<p><strong>Independent practice:</strong> Write a short script that takes raw input and produces a processed dataset.</p>
+<p><strong>Suggested readings/resources:</strong> pandas user guide; NumPy quickstart; instructor-prepared data transformation checklist.</p>
+<p><strong>Applied use case:</strong> Turning fragmented property and risk records into an investment-ready analytical dataset.</p>
+<p><strong>Deliverable:</strong> Processed dataset and transformation notebook or script.</p>
+</section>
+<section id="week-5-exploratory-data-analysis-and-professional-visualisation" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="week-5-exploratory-data-analysis-and-professional-visualisation"><span class="header-section-number">10.5</span> Week 5: Exploratory Data Analysis and Professional Visualisation</h2>
+<p><strong>Session purpose:</strong> Develop the ability to explore and communicate data patterns before formal modelling.</p>
+<p><strong>Key concepts:</strong> Summary statistics, distributions, outliers, grouped comparisons, correlations, static and interactive charts.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Produce price distribution plots.</li>
+<li>Compare exposed and non-exposed properties.</li>
+<li>Create correlation heatmaps.</li>
+<li>Use interactive charts for stakeholder communication.</li>
+<li>Discuss visual ethics and avoiding misleading graphics.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Visualise sale-price distributions across flood-risk bands and EPC categories.</p>
+<p><strong>Guided lab:</strong> Create a professional EDA notebook for a valuation or investment audience.</p>
+<p><strong>Independent practice:</strong> Prepare a two-page visual brief summarising one dataset’s climate-risk patterns.</p>
+<p><strong>Suggested readings/resources:</strong> Matplotlib documentation; seaborn documentation; Plotly documentation; selected examples of professional real estate market reports.</p>
+<p><strong>Applied use case:</strong> Understanding whether flood-risk exposure appears associated with observed price differences before formal modelling.</p>
+<p><strong>Deliverable:</strong> EDA notebook and visual summary.</p>
+</section>
+<section id="week-6-regression-and-econometric-modelling-for-real-estate-pricing" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="week-6-regression-and-econometric-modelling-for-real-estate-pricing"><span class="header-section-number">10.6</span> Week 6: Regression and Econometric Modelling for Real Estate Pricing</h2>
+<p><strong>Session purpose:</strong> Apply statistical and econometric modelling to real estate pricing and climate-risk capitalisation.</p>
+<p><strong>Key concepts:</strong> OLS regression, dependent and independent variables, dummy variables, controls, interactions, model assumptions, diagnostics and interpretation.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Specify a hedonic pricing model.</li>
+<li>Estimate regression using <code>statsmodels</code>.</li>
+<li>Interpret coefficients for flood-risk bands and property attributes.</li>
+<li>Discuss omitted variable bias, spatial confounding and model limitations.</li>
+<li>Produce regression tables suitable for reports.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Estimate a model of sale price or log sale price using property attributes, flood-risk indicators, EPC rating and local authority controls.</p>
+<p><strong>Guided lab:</strong> Build and interpret a flood-risk capitalisation regression model.</p>
+<p><strong>Independent practice:</strong> Write a regression interpretation memo for a professional valuation or investment audience.</p>
+<p><strong>Suggested readings/resources:</strong> statsmodels documentation; instructor-selected readings on hedonic pricing and climate-risk capitalisation, to be verified for the specific context.</p>
+<p><strong>Applied use case:</strong> Estimating whether flood-risk exposure is associated with a price discount after controlling for property characteristics.</p>
+<p><strong>Deliverable:</strong> Quarto regression report.</p>
+</section>
+<section id="week-7-machine-learning-for-prediction-classification-and-risk-scoring" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="week-7-machine-learning-for-prediction-classification-and-risk-scoring"><span class="header-section-number">10.7</span> Week 7: Machine Learning for Prediction, Classification and Risk Scoring</h2>
+<p><strong>Session purpose:</strong> Introduce machine learning as a complement to interpretable statistical modelling.</p>
+<p><strong>Key concepts:</strong> Supervised learning, train/test split, preprocessing, pipelines, cross-validation, evaluation metrics, feature importance, model cards and responsible interpretation.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Define prediction and classification tasks.</li>
+<li>Build baseline models.</li>
+<li>Compare linear models, tree-based models and simple ensemble approaches.</li>
+<li>Discuss overfitting and model interpretability.</li>
+<li>Create a model card documenting purpose, data, limitations and intended use.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Predict whether a property belongs to a high-risk investment category based on location, flood-risk, EPC, price and vulnerability indicators.</p>
+<p><strong>Guided lab:</strong> Build and evaluate a machine-learning model for exposure scoring or price-discount classification.</p>
+<p><strong>Independent practice:</strong> Compare a transparent model with a more predictive model and explain the trade-offs.</p>
+<p><strong>Suggested readings/resources:</strong> scikit-learn documentation; model evaluation guides; responsible AI and model documentation resources selected by the instructor.</p>
+<p><strong>Applied use case:</strong> Classifying assets into climate-risk investment bands for preliminary screening.</p>
+<p><strong>Deliverable:</strong> Machine-learning notebook and model card.</p>
+</section>
+<section id="week-8-time-series-analysis-for-reits-housing-prices-and-market-shocks" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="week-8-time-series-analysis-for-reits-housing-prices-and-market-shocks"><span class="header-section-number">10.8</span> Week 8: Time-Series Analysis for REITs, Housing Prices and Market Shocks</h2>
+<p><strong>Session purpose:</strong> Develop skills for analysing temporal patterns in financial and real estate market data.</p>
+<p><strong>Key concepts:</strong> Date-time parsing, time indexes, returns, volatility, rolling windows, event indicators, lagged variables and basic time-series models.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Import and clean financial time-series data.</li>
+<li>Calculate REIT returns and rolling volatility.</li>
+<li>Align shock dates with market data.</li>
+<li>Compare periods before and after climate, energy, interest-rate or infrastructure events.</li>
+<li>Discuss correlation, causality and event-study limitations.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Analyse REIT return volatility around an infrastructure shock, policy uncertainty period or climate-related event.</p>
+<p><strong>Guided lab:</strong> Create time-series plots and basic regression/event indicators for REIT or housing price data.</p>
+<p><strong>Independent practice:</strong> Prepare a time-series risk note linking market behaviour to one selected shock type.</p>
+<p><strong>Suggested readings/resources:</strong> pandas time-series documentation; statsmodels time-series documentation; yfinance documentation or alternative finance-data source documentation, subject to verification and data-use terms.</p>
+<p><strong>Applied use case:</strong> Understanding how climate events, infrastructure disruption or policy uncertainty may affect REIT returns and volatility.</p>
+<p><strong>Deliverable:</strong> Time-series analysis notebook and risk note.</p>
+</section>
+<section id="week-9-geospatial-analytics-for-flood-exposure-and-local-vulnerability" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="week-9-geospatial-analytics-for-flood-exposure-and-local-vulnerability"><span class="header-section-number">10.9</span> Week 9: Geospatial Analytics for Flood Exposure and Local Vulnerability</h2>
+<p><strong>Session purpose:</strong> Enable the learner to integrate property location, flood-risk layers and local authority indicators.</p>
+<p><strong>Key concepts:</strong> Coordinate reference systems, points, polygons, shapefiles, GeoJSON, spatial joins, buffers, choropleth maps, interactive mapping and raster awareness.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Load boundary and property-location data.</li>
+<li>Convert latitude/longitude data into geometries.</li>
+<li>Join property points to local authority polygons.</li>
+<li>Overlay properties with flood-risk zones.</li>
+<li>Build interactive exposure maps.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Map property exposure to flood-risk zones and summarise exposure by local authority.</p>
+<p><strong>Guided lab:</strong> Conduct spatial joins and produce an interactive flood-risk map.</p>
+<p><strong>Independent practice:</strong> Create a short geospatial exposure report for one selected area.</p>
+<p><strong>Suggested readings/resources:</strong> GeoPandas documentation; Shapely documentation; Folium documentation; relevant national or local geospatial data portals, to be verified.</p>
+<p><strong>Applied use case:</strong> Identifying property assets exposed to flood risk and linking exposure to valuation and vulnerability indicators.</p>
+<p><strong>Deliverable:</strong> Geospatial notebook and interactive flood-risk map.</p>
+</section>
+<section id="week-10-nlp-for-esg-planning-policy-and-transition-risk-signals" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="week-10-nlp-for-esg-planning-policy-and-transition-risk-signals"><span class="header-section-number">10.10</span> Week 10: NLP for ESG, Planning, Policy and Transition-Risk Signals</h2>
+<p><strong>Session purpose:</strong> Introduce text analytics for transition-risk evidence in real estate investment and policy contexts.</p>
+<p><strong>Key concepts:</strong> Text extraction, cleaning, tokenisation, stopword removal, keyword dictionaries, TF-IDF, topic exploration, simple classification and limitations of automated text analysis.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Load a small corpus of ESG, planning or policy documents.</li>
+<li>Clean and tokenize text.</li>
+<li>Build a transition-risk keyword dictionary.</li>
+<li>Extract document-level signals.</li>
+<li>Discuss interpretive validity and the need for human review.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Analyse ESG disclosures or policy documents for signals related to energy efficiency, regulation, carbon performance, stranded assets and retrofit risk.</p>
+<p><strong>Guided lab:</strong> Build a document-risk summary table for a small corpus.</p>
+<p><strong>Independent practice:</strong> Compare transition-risk signals across document types.</p>
+<p><strong>Suggested readings/resources:</strong> nltk documentation; spaCy documentation; scikit-learn text feature extraction documentation; selected ESG or planning documents, to be verified for access and use rights.</p>
+<p><strong>Applied use case:</strong> Identifying transition-risk signals relevant to real estate investors from policy and disclosure texts.</p>
+<p><strong>Deliverable:</strong> NLP notebook and transition-risk document summary.</p>
+</section>
+<section id="week-11-dashboard-development-for-real-estate-climate-risk-communication" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="week-11-dashboard-development-for-real-estate-climate-risk-communication"><span class="header-section-number">10.11</span> Week 11: Dashboard Development for Real Estate Climate-Risk Communication</h2>
+<p><strong>Session purpose:</strong> Build a prototype decision-support dashboard for communicating climate-risk analytics.</p>
+<p><strong>Key concepts:</strong> Dashboard structure, user stories, filters, inputs, charts, maps, tables, layout, interactivity and deployment basics.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Define dashboard users: investor, valuer, insurer, policymaker, local authority and asset manager.</li>
+<li>Build a simple Streamlit or Dash app.</li>
+<li>Add filters for local authority, flood-risk band, EPC rating and property value.</li>
+<li>Add visual summaries and maps.</li>
+<li>Discuss dashboard limitations and data governance.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Build a prototype dashboard showing property value, exposure, EPC rating, vulnerability indicators and investment-risk score.</p>
+<p><strong>Guided lab:</strong> Convert a processed dataset into an interactive dashboard.</p>
+<p><strong>Independent practice:</strong> Write dashboard documentation explaining data inputs, assumptions, limitations and intended users.</p>
+<p><strong>Suggested readings/resources:</strong> Streamlit documentation; Dash documentation; Plotly documentation; dashboard design examples selected by the instructor.</p>
+<p><strong>Applied use case:</strong> Communicating asset-level climate-risk evidence to investors, valuers, insurers, policymakers and asset managers.</p>
+<p><strong>Deliverable:</strong> Working dashboard prototype and documentation.</p>
+</section>
+<section id="week-12-capstone-integration-reproducibility-and-professional-presentation" class="level2" data-number="10.12">
+<h2 data-number="10.12" class="anchored" data-anchor-id="week-12-capstone-integration-reproducibility-and-professional-presentation"><span class="header-section-number">10.12</span> Week 12: Capstone Integration, Reproducibility and Professional Presentation</h2>
+<p><strong>Session purpose:</strong> Integrate the programme into a final applied project with documented workflow, professional outputs and future development pathway.</p>
+<p><strong>Key concepts:</strong> Capstone synthesis, GitHub repository, Quarto technical report, reproducible workflow, presentation, model limitations and stakeholder communication.</p>
+<p><strong>Live teaching activities:</strong></p>
+<ul>
+<li>Review capstone requirements.</li>
+<li>Conduct repository and documentation checks.</li>
+<li>Refine analysis, visuals, maps and dashboards.</li>
+<li>Prepare a professional presentation.</li>
+<li>Discuss publication, consultancy and product-development extensions.</li>
+</ul>
+<p><strong>Demonstration task:</strong> Walk through a complete end-to-end project structure from raw data to dashboard and Quarto report.</p>
+<p><strong>Guided lab:</strong> Capstone troubleshooting and presentation rehearsal.</p>
+<p><strong>Independent practice:</strong> Finalise the capstone report, dashboard/prototype and presentation.</p>
+<p><strong>Suggested readings/resources:</strong> Quarto documentation; GitHub Docs; project-specific technical documentation and verified domain resources.</p>
+<p><strong>Applied use case:</strong> Producing a research, consultancy or product-ready analytical workflow.</p>
+<p><strong>Deliverable:</strong> Final capstone repository, Quarto report and presentation.</p>
+</section>
+</section>
+<section id="applied-dataset-strategy" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Applied Dataset Strategy</h1>
+<p>The programme should use datasets that reflect the learner’s intended research and professional work. Some datasets may be public, some institutional, some commercial and some locally sourced. Where specific access is uncertain, dataset references should be treated as examples to be verified, adapted to local availability and checked against data-use rights.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset Type</th>
+<th>Possible Variables</th>
+<th>Use in Curriculum</th>
+<th>Access Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Property transaction data</td>
+<td>Sale price, date, property type, tenure, location, floor area, age, transaction identifier</td>
+<td>Pricing models, EDA, flood-risk capitalisation</td>
+<td>Public, commercial or institutional source to be verified.</td>
+</tr>
+<tr class="even">
+<td>Housing price indices</td>
+<td>Area, time period, index value, growth rate</td>
+<td>Time-series analysis and market context</td>
+<td>National statistical or property-market source to be verified.</td>
+</tr>
+<tr class="odd">
+<td>Valuation data</td>
+<td>Assessed value, valuation date, property attributes, adjustment factors</td>
+<td>Valuation modelling and risk adjustment</td>
+<td>Often commercial or confidential; use anonymised or synthetic examples if needed.</td>
+</tr>
+<tr class="even">
+<td>Flood-risk indicators</td>
+<td>Flood zone, risk band, return period, exposure score, defence status</td>
+<td>Flood-risk capitalisation, exposure mapping, dashboards</td>
+<td>Environmental agency or local authority data to be verified.</td>
+</tr>
+<tr class="odd">
+<td>Climate exposure data</td>
+<td>Heat, flood, storm, sea-level, precipitation or hazard indicators</td>
+<td>Physical climate-risk analytics</td>
+<td>Source depends on jurisdiction and scale; verify suitability.</td>
+</tr>
+<tr class="even">
+<td>EPC or energy-efficiency data</td>
+<td>EPC rating, energy consumption, emissions estimate, certificate date</td>
+<td>Transition-risk and stranded-asset analysis</td>
+<td>Public or regulated data source depending on country.</td>
+</tr>
+<tr class="odd">
+<td>REIT price and returns data</td>
+<td>Price, adjusted close, returns, volume, market index</td>
+<td>REIT volatility and shock analysis</td>
+<td>Financial data provider or open finance API, subject to terms.</td>
+</tr>
+<tr class="even">
+<td>Interest rates</td>
+<td>Policy rate, mortgage rate, bond yield</td>
+<td>Time-series and investment-risk modelling</td>
+<td>Central bank or financial data source to be verified.</td>
+</tr>
+<tr class="odd">
+<td>Inflation data</td>
+<td>CPI, inflation rate, construction cost index</td>
+<td>Market stress and valuation context</td>
+<td>National statistical source to be verified.</td>
+</tr>
+<tr class="even">
+<td>Infrastructure shock data</td>
+<td>Power outages, transport disruptions, utility failures, event dates</td>
+<td>Event analysis and infrastructure resilience</td>
+<td>Local authority, utility or news-derived source to be verified.</td>
+</tr>
+<tr class="odd">
+<td>ESG reports</td>
+<td>Company disclosures, sustainability reports, transition plans</td>
+<td>NLP and transition-risk signal extraction</td>
+<td>Company websites or disclosure databases, subject to use rights.</td>
+</tr>
+<tr class="even">
+<td>Policy documents</td>
+<td>Climate policy, planning regulation, building standards, retrofit rules</td>
+<td>NLP and transition-risk analysis</td>
+<td>Government or regulator sources to be verified.</td>
+</tr>
+<tr class="odd">
+<td>Planning documents</td>
+<td>Local plans, development frameworks, flood-planning guidance</td>
+<td>Policy and market-sentiment text analytics</td>
+<td>Local authority sources to be verified.</td>
+</tr>
+<tr class="even">
+<td>Local authority vulnerability indicators</td>
+<td>Income, deprivation, infrastructure, housing stock, demographic indicators</td>
+<td>Vulnerability scoring and spatial analysis</td>
+<td>Statistical or local government source to be verified.</td>
+</tr>
+<tr class="odd">
+<td>Insurance affordability indicators</td>
+<td>Premiums, coverage availability, claims exposure, insurer withdrawal</td>
+<td>Mortgageability and liquidity analysis</td>
+<td>Often restricted; use proxy indicators if direct data unavailable.</td>
+</tr>
+<tr class="even">
+<td>Mortgageability indicators</td>
+<td>Lending restrictions, loan-to-value constraints, risk flags</td>
+<td>Investment and liquidity analysis</td>
+<td>Commercial or institutional source to be verified.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="practical-exercises" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Practical Exercises</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Week</th>
+<th>Exercise Title</th>
+<th>Task</th>
+<th>Expected Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>Build the Real Estate Climate-Risk Project Shell</td>
+<td>Create a Python project folder, notebook, Quarto report and README for one selected use case.</td>
+<td>Project folder and first Quarto note.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td>Encode Property-Risk Logic in Python</td>
+<td>Write functions that classify property climate-risk status using flood risk, EPC rating and vulnerability indicators.</td>
+<td>Python foundations notebook.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td>Clean a Property Transaction Dataset</td>
+<td>Import Excel/CSV records, correct data types, handle missing values and merge with a risk table.</td>
+<td>Cleaned dataset and data-quality report.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td>Create Local Authority Risk Summaries</td>
+<td>Aggregate property values, exposure rates and EPC scores by local authority.</td>
+<td>Processed summary table.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td>Visualise Flood-Risk Capitalisation Patterns</td>
+<td>Produce charts comparing price distributions and exposure categories.</td>
+<td>EDA visual report.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td>Estimate a Hedonic Pricing Model</td>
+<td>Run a regression model linking sale price to property attributes and flood-risk indicators.</td>
+<td>Regression report in Quarto.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td>Build an Investment-Risk Classifier</td>
+<td>Train a model to classify properties into investment-risk categories.</td>
+<td>Machine-learning notebook and model card.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td>Analyse REIT Volatility Around Shocks</td>
+<td>Calculate returns and rolling volatility around climate, infrastructure or policy events.</td>
+<td>Time-series risk note.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td>Map Property Flood Exposure</td>
+<td>Conduct a spatial join between property points and flood-risk polygons.</td>
+<td>Interactive flood-risk map.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td>Extract Transition-Risk Signals from Text</td>
+<td>Analyse ESG, planning or policy documents for transition-risk indicators.</td>
+<td>NLP summary table and interpretation.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td>Build a Climate-Risk Dashboard Prototype</td>
+<td>Create a Streamlit or Dash dashboard with filters, charts and maps.</td>
+<td>Working dashboard prototype.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td>Present an End-to-End Analytical System</td>
+<td>Integrate data, model, map, dashboard and report into a capstone presentation.</td>
+<td>Final repository, report and presentation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="assessment-design" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Assessment Design</h1>
+<p>The assessment structure should be practical, cumulative and portfolio-oriented.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assessment Component</th>
+<th style="text-align: right;">Weight</th>
+<th>Description</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Weekly coding exercises</td>
+<td style="text-align: right;">20%</td>
+<td>Short weekly exercises demonstrating incremental Python skills in applied real estate and climate-risk contexts.</td>
+<td>Notebooks, scripts and outputs.</td>
+</tr>
+<tr class="even">
+<td>Short applied analytics tasks</td>
+<td style="text-align: right;">15%</td>
+<td>Brief analytical memos or outputs interpreting data patterns for valuation, investment, policy or risk audiences.</td>
+<td>Visual briefs, risk notes and interpretation memos.</td>
+</tr>
+<tr class="odd">
+<td>Mid-programme mini-project</td>
+<td style="text-align: right;">15%</td>
+<td>A small integrated project combining data cleaning, EDA and regression or preliminary modelling.</td>
+<td>Quarto mini-report and cleaned dataset.</td>
+</tr>
+<tr class="even">
+<td>GitHub / reproducibility portfolio</td>
+<td style="text-align: right;">15%</td>
+<td>Evidence of organised project folders, README files, version control, documentation and reproducible workflow.</td>
+<td>GitHub repository or local repository export.</td>
+</tr>
+<tr class="odd">
+<td>Final capstone project</td>
+<td style="text-align: right;">25%</td>
+<td>End-to-end applied project selected from the capstone options.</td>
+<td>Data workflow, model, map/dashboard and Quarto report.</td>
+</tr>
+<tr class="even">
+<td>Professional presentation or report defence</td>
+<td style="text-align: right;">10%</td>
+<td>Concise presentation of the capstone problem, method, findings, limitations and stakeholder relevance.</td>
+<td>Slide deck, oral presentation or recorded walkthrough.</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>100%</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="assessment-rubric" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Assessment Rubric</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Excellent</th>
+<th>Good</th>
+<th>Developing</th>
+<th>Needs Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Technical accuracy</td>
+<td>Code runs cleanly, is well structured and produces correct outputs.</td>
+<td>Code mostly runs with minor inefficiencies or small issues.</td>
+<td>Code runs partially but requires substantial correction.</td>
+<td>Code does not run or outputs are unreliable.</td>
+</tr>
+<tr class="even">
+<td>Data cleaning and management</td>
+<td>Cleaning decisions are systematic, documented and appropriate to the dataset.</td>
+<td>Most cleaning steps are appropriate and understandable.</td>
+<td>Some cleaning steps are attempted but inconsistently applied.</td>
+<td>Data cleaning is weak, undocumented or incorrect.</td>
+</tr>
+<tr class="odd">
+<td>Analytical reasoning</td>
+<td>Analysis is clearly linked to a real estate climate-risk problem and uses appropriate logic.</td>
+<td>Analysis is relevant but could be more tightly justified.</td>
+<td>Analysis is partially relevant but underdeveloped.</td>
+<td>Analysis lacks clear connection to the problem.</td>
+</tr>
+<tr class="even">
+<td>Model appropriateness</td>
+<td>Model choice is justified, limitations are stated and outputs are interpreted responsibly.</td>
+<td>Model choice is generally suitable with some limitations discussed.</td>
+<td>Model is attempted but justification or interpretation is weak.</td>
+<td>Model is inappropriate, unexplained or misinterpreted.</td>
+</tr>
+<tr class="odd">
+<td>Domain interpretation</td>
+<td>Findings are interpreted in relation to valuation, investment, flood risk, physical risk, transition risk or policy relevance.</td>
+<td>Interpretation is relevant but not fully developed.</td>
+<td>Interpretation is descriptive rather than analytical.</td>
+<td>Interpretation is absent or disconnected from the domain.</td>
+</tr>
+<tr class="even">
+<td>Visualisation quality</td>
+<td>Charts, maps and tables are clear, professional, labelled and decision-relevant.</td>
+<td>Visuals are understandable with minor design issues.</td>
+<td>Visuals are basic or inconsistently labelled.</td>
+<td>Visuals are unclear, misleading or absent.</td>
+</tr>
+<tr class="odd">
+<td>Reproducibility</td>
+<td>Project has clear folder structure, documented dependencies, Quarto report and version-control evidence.</td>
+<td>Reproducibility is mostly evident but documentation could improve.</td>
+<td>Some reproducibility practices are present.</td>
+<td>Workflow is disorganised and difficult to reproduce.</td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td>README, comments, data notes and method explanations are clear and professional.</td>
+<td>Documentation is present but incomplete in places.</td>
+<td>Documentation is minimal or inconsistent.</td>
+<td>Documentation is missing or unclear.</td>
+</tr>
+<tr class="odd">
+<td>Policy / investment relevance</td>
+<td>Output clearly addresses stakeholder decisions and professional implications.</td>
+<td>Relevance is visible but could be more explicit.</td>
+<td>Relevance is implied but weakly articulated.</td>
+<td>Stakeholder relevance is absent.</td>
+</tr>
+<tr class="even">
+<td>Communication</td>
+<td>Report or presentation is polished, coherent and suitable for professional or academic audiences.</td>
+<td>Communication is clear with minor structural weaknesses.</td>
+<td>Communication is understandable but uneven.</td>
+<td>Communication is unclear or incomplete.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="capstone-project-options" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Capstone Project Options</h1>
+<section id="capstone-a-flood-risk-and-house-price-analytics-tool" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="capstone-a-flood-risk-and-house-price-analytics-tool"><span class="header-section-number">15.1</span> Capstone A: Flood Risk and House Price Analytics Tool</h2>
+<section id="project-rationale" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="project-rationale"><span class="header-section-number">15.1.1</span> Project rationale</h3>
+<p>Flood risk can affect housing prices, market liquidity, insurance affordability, mortgageability and valuation confidence. This project develops an analytical workflow for examining whether and how flood-risk indicators are associated with house prices.</p>
+</section>
+<section id="research-professional-problem" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="research-professional-problem"><span class="header-section-number">15.1.2</span> Research / professional problem</h3>
+<p>Can Python be used to estimate and communicate the relationship between flood-risk exposure and house prices in a way that is useful for researchers, valuers, investors, insurers, policymakers and local authorities?</p>
+</section>
+<section id="guiding-questions" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="guiding-questions"><span class="header-section-number">15.1.3</span> Guiding questions</h3>
+<ul>
+<li>Are properties in higher flood-risk categories associated with lower observed prices?</li>
+<li>Does the relationship vary by property type, location or local authority?</li>
+<li>How sensitive are results to model specification?</li>
+<li>What are the implications for valuation, investment risk and market liquidity?</li>
+</ul>
+</section>
+<section id="required-data-types" class="level3" data-number="15.1.4">
+<h3 data-number="15.1.4" class="anchored" data-anchor-id="required-data-types"><span class="header-section-number">15.1.4</span> Required data types</h3>
+<ul>
+<li>Property transaction data.</li>
+<li>Property attributes.</li>
+<li>Flood-risk indicators.</li>
+<li>Local authority identifiers or boundaries.</li>
+<li>Optional: EPC rating, vulnerability indicators, insurance proxy variables.</li>
+</ul>
+</section>
+<section id="python-libraries" class="level3" data-number="15.1.5">
+<h3 data-number="15.1.5" class="anchored" data-anchor-id="python-libraries"><span class="header-section-number">15.1.5</span> Python libraries</h3>
+<p><code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>plotly</code>, <code>statsmodels</code>, <code>geopandas</code>, <code>shapely</code>, <code>folium</code>, <code>quarto</code>.</p>
+</section>
+<section id="analytic-workflow" class="level3" data-number="15.1.6">
+<h3 data-number="15.1.6" class="anchored" data-anchor-id="analytic-workflow"><span class="header-section-number">15.1.6</span> Analytic workflow</h3>
+<ol type="1">
+<li>Define the research question and case area.</li>
+<li>Import transaction and flood-risk datasets.</li>
+<li>Clean property records and standardise variables.</li>
+<li>Join property and risk data.</li>
+<li>Conduct EDA by risk band and location.</li>
+<li>Estimate hedonic regression models.</li>
+<li>Interpret flood-risk coefficients cautiously.</li>
+<li>Map exposed properties and local authority patterns.</li>
+<li>Prepare a Quarto report.</li>
+<li>Package the workflow in a documented repository.</li>
+</ol>
+</section>
+<section id="expected-outputs" class="level3" data-number="15.1.7">
+<h3 data-number="15.1.7" class="anchored" data-anchor-id="expected-outputs"><span class="header-section-number">15.1.7</span> Expected outputs</h3>
+<ul>
+<li>Cleaned analysis-ready dataset.</li>
+<li>EDA charts.</li>
+<li>Regression model and interpretation.</li>
+<li>Flood-risk exposure map.</li>
+<li>Quarto technical report.</li>
+<li>Professional summary memo.</li>
+</ul>
+</section>
+<section id="dashboard-report-expectations" class="level3" data-number="15.1.8">
+<h3 data-number="15.1.8" class="anchored" data-anchor-id="dashboard-report-expectations"><span class="header-section-number">15.1.8</span> Dashboard / report expectations</h3>
+<p>The report should include the research problem, data description, cleaning decisions, model specification, key findings, visual evidence, limitations and implications for valuation or investment decision-making.</p>
+</section>
+<section id="assessment-criteria" class="level3" data-number="15.1.9">
+<h3 data-number="15.1.9" class="anchored" data-anchor-id="assessment-criteria"><span class="header-section-number">15.1.9</span> Assessment criteria</h3>
+<ul>
+<li>Quality of data cleaning.</li>
+<li>Appropriateness of regression specification.</li>
+<li>Carefulness of interpretation.</li>
+<li>Clarity of charts and maps.</li>
+<li>Reproducibility of the workflow.</li>
+<li>Relevance to valuation and investment decision-making.</li>
+</ul>
+</section>
+<section id="extension-potential" class="level3" data-number="15.1.10">
+<h3 data-number="15.1.10" class="anchored" data-anchor-id="extension-potential"><span class="header-section-number">15.1.10</span> Extension potential</h3>
+<p>The project can be extended into a journal article on flood-risk capitalisation, a consultancy tool for valuers, a grant-funded urban resilience study or an investor-facing flood-risk screening product.</p>
+</section>
+</section>
+<section id="capstone-b-climate-risk-property-dashboard" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="capstone-b-climate-risk-property-dashboard"><span class="header-section-number">15.2</span> Capstone B: Climate-Risk Property Dashboard</h2>
+<section id="project-rationale-1" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="project-rationale-1"><span class="header-section-number">15.2.1</span> Project rationale</h3>
+<p>Stakeholders need accessible tools for understanding asset-level and area-level climate-risk exposure. A dashboard can translate complex property, climate, vulnerability and investment indicators into decision-support evidence.</p>
+</section>
+<section id="research-professional-problem-1" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="research-professional-problem-1"><span class="header-section-number">15.2.2</span> Research / professional problem</h3>
+<p>How can Python be used to build an interactive dashboard that communicates flood exposure, EPC rating, property value, local authority context, vulnerability indicators and investment-risk scoring?</p>
+</section>
+<section id="guiding-questions-1" class="level3" data-number="15.2.3">
+<h3 data-number="15.2.3" class="anchored" data-anchor-id="guiding-questions-1"><span class="header-section-number">15.2.3</span> Guiding questions</h3>
+<ul>
+<li>Which assets are most exposed to climate-risk indicators?</li>
+<li>How do flood risk, EPC rating and property value interact?</li>
+<li>Which local authorities show higher vulnerability or investment concern?</li>
+<li>How can dashboard design support investors, valuers, insurers, policymakers and asset managers?</li>
+</ul>
+</section>
+<section id="required-data-types-1" class="level3" data-number="15.2.4">
+<h3 data-number="15.2.4" class="anchored" data-anchor-id="required-data-types-1"><span class="header-section-number">15.2.4</span> Required data types</h3>
+<ul>
+<li>Property-level dataset.</li>
+<li>Flood-risk indicators.</li>
+<li>EPC or energy-efficiency data.</li>
+<li>Local authority data.</li>
+<li>Vulnerability indicators.</li>
+<li>Optional: valuation, mortgageability or insurance proxy indicators.</li>
+</ul>
+</section>
+<section id="python-libraries-1" class="level3" data-number="15.2.5">
+<h3 data-number="15.2.5" class="anchored" data-anchor-id="python-libraries-1"><span class="header-section-number">15.2.5</span> Python libraries</h3>
+<p><code>pandas</code>, <code>numpy</code>, <code>plotly</code>, <code>geopandas</code>, <code>folium</code>, <code>streamlit</code> or <code>dash</code>, <code>shapely</code>.</p>
+</section>
+<section id="analytic-workflow-1" class="level3" data-number="15.2.6">
+<h3 data-number="15.2.6" class="anchored" data-anchor-id="analytic-workflow-1"><span class="header-section-number">15.2.6</span> Analytic workflow</h3>
+<ol type="1">
+<li>Define dashboard users and decisions.</li>
+<li>Create a cleaned dashboard dataset.</li>
+<li>Build a risk-scoring logic.</li>
+<li>Create charts, maps and summary tables.</li>
+<li>Build filters by location, risk band, EPC rating and value band.</li>
+<li>Add explanatory text and limitations.</li>
+<li>Test usability with a simple user story.</li>
+<li>Document the dashboard and repository.</li>
+</ol>
+</section>
+<section id="expected-outputs-1" class="level3" data-number="15.2.7">
+<h3 data-number="15.2.7" class="anchored" data-anchor-id="expected-outputs-1"><span class="header-section-number">15.2.7</span> Expected outputs</h3>
+<ul>
+<li>Dashboard-ready dataset.</li>
+<li>Risk-scoring method note.</li>
+<li>Interactive dashboard.</li>
+<li>Map of property exposure.</li>
+<li>README and user guide.</li>
+</ul>
+</section>
+<section id="dashboard-report-expectations-1" class="level3" data-number="15.2.8">
+<h3 data-number="15.2.8" class="anchored" data-anchor-id="dashboard-report-expectations-1"><span class="header-section-number">15.2.8</span> Dashboard / report expectations</h3>
+<p>The dashboard should include filters, charts, summary metrics, property or area-level risk indicators and clear methodological notes. It must avoid presenting risk scores as definitive without explaining assumptions.</p>
+</section>
+<section id="assessment-criteria-1" class="level3" data-number="15.2.9">
+<h3 data-number="15.2.9" class="anchored" data-anchor-id="assessment-criteria-1"><span class="header-section-number">15.2.9</span> Assessment criteria</h3>
+<ul>
+<li>Dashboard functionality.</li>
+<li>Relevance of indicators.</li>
+<li>Clarity of user interface.</li>
+<li>Transparency of risk scoring.</li>
+<li>Quality of documentation.</li>
+<li>Suitability for stakeholder communication.</li>
+</ul>
+</section>
+<section id="extension-potential-1" class="level3" data-number="15.2.10">
+<h3 data-number="15.2.10" class="anchored" data-anchor-id="extension-potential-1"><span class="header-section-number">15.2.10</span> Extension potential</h3>
+<p>This project can become a consultancy prototype, policy-facing tool, investor dashboard, teaching demonstration or foundation for grant-funded digital infrastructure work.</p>
+</section>
+</section>
+<section id="capstone-c-reit-climate-and-infrastructure-shock-model" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="capstone-c-reit-climate-and-infrastructure-shock-model"><span class="header-section-number">15.3</span> Capstone C: REIT Climate and Infrastructure Shock Model</h2>
+<section id="project-rationale-2" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="project-rationale-2"><span class="header-section-number">15.3.1</span> Project rationale</h3>
+<p>REITs and listed real estate vehicles are exposed to climate events, infrastructure disruption, energy shocks, policy uncertainty, interest-rate shifts and wider financial-market volatility. Python can support analysis of how these shocks relate to returns and volatility.</p>
+</section>
+<section id="research-professional-problem-2" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="research-professional-problem-2"><span class="header-section-number">15.3.2</span> Research / professional problem</h3>
+<p>How do climate, infrastructure, policy or macro-financial shocks correspond with REIT returns, volatility and investment risk?</p>
+</section>
+<section id="guiding-questions-2" class="level3" data-number="15.3.3">
+<h3 data-number="15.3.3" class="anchored" data-anchor-id="guiding-questions-2"><span class="header-section-number">15.3.3</span> Guiding questions</h3>
+<ul>
+<li>How do REIT returns behave around selected shock dates?</li>
+<li>Does volatility increase during climate, infrastructure or policy events?</li>
+<li>How do interest rates and inflation interact with REIT performance?</li>
+<li>What are the limitations of attributing financial-market movements to climate or infrastructure shocks?</li>
+</ul>
+</section>
+<section id="required-data-types-2" class="level3" data-number="15.3.4">
+<h3 data-number="15.3.4" class="anchored" data-anchor-id="required-data-types-2"><span class="header-section-number">15.3.4</span> Required data types</h3>
+<ul>
+<li>REIT price data.</li>
+<li>Market index data.</li>
+<li>Interest-rate data.</li>
+<li>Inflation data.</li>
+<li>Climate-event or infrastructure-shock dates.</li>
+<li>Optional: energy-price or policy-uncertainty indicators.</li>
+</ul>
+</section>
+<section id="python-libraries-2" class="level3" data-number="15.3.5">
+<h3 data-number="15.3.5" class="anchored" data-anchor-id="python-libraries-2"><span class="header-section-number">15.3.5</span> Python libraries</h3>
+<p><code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, <code>plotly</code>, <code>statsmodels</code>, <code>yfinance</code> or alternative finance-data package, <code>scipy</code>.</p>
+</section>
+<section id="analytic-workflow-2" class="level3" data-number="15.3.6">
+<h3 data-number="15.3.6" class="anchored" data-anchor-id="analytic-workflow-2"><span class="header-section-number">15.3.6</span> Analytic workflow</h3>
+<ol type="1">
+<li>Select REITs or listed real estate securities.</li>
+<li>Import price and macro-financial data.</li>
+<li>Calculate returns and rolling volatility.</li>
+<li>Construct shock-event indicators.</li>
+<li>Visualise market behaviour around events.</li>
+<li>Estimate simple models relating returns or volatility to shock variables.</li>
+<li>Interpret cautiously with attention to confounding.</li>
+<li>Produce a professional risk note.</li>
+</ol>
+</section>
+<section id="expected-outputs-2" class="level3" data-number="15.3.7">
+<h3 data-number="15.3.7" class="anchored" data-anchor-id="expected-outputs-2"><span class="header-section-number">15.3.7</span> Expected outputs</h3>
+<ul>
+<li>Cleaned time-series dataset.</li>
+<li>Return and volatility charts.</li>
+<li>Event-window summary.</li>
+<li>Basic regression or volatility model.</li>
+<li>Quarto risk report.</li>
+</ul>
+</section>
+<section id="dashboard-report-expectations-2" class="level3" data-number="15.3.8">
+<h3 data-number="15.3.8" class="anchored" data-anchor-id="dashboard-report-expectations-2"><span class="header-section-number">15.3.8</span> Dashboard / report expectations</h3>
+<p>The report should include clear event definitions, data limitations, market context, charts, model outputs and implications for investment strategy.</p>
+</section>
+<section id="assessment-criteria-2" class="level3" data-number="15.3.9">
+<h3 data-number="15.3.9" class="anchored" data-anchor-id="assessment-criteria-2"><span class="header-section-number">15.3.9</span> Assessment criteria</h3>
+<ul>
+<li>Correct handling of time-series data.</li>
+<li>Appropriate calculation of returns and volatility.</li>
+<li>Sensible event framing.</li>
+<li>Responsible interpretation.</li>
+<li>Communication of uncertainty.</li>
+<li>Reproducibility.</li>
+</ul>
+</section>
+<section id="extension-potential-2" class="level3" data-number="15.3.10">
+<h3 data-number="15.3.10" class="anchored" data-anchor-id="extension-potential-2"><span class="header-section-number">15.3.10</span> Extension potential</h3>
+<p>The project can support research on REIT climate-risk exposure, infrastructure resilience, financial-market vulnerability or climate-adjusted real estate investment strategies.</p>
+</section>
+</section>
+<section id="capstone-d-transition-risk-text-analytics-project" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="capstone-d-transition-risk-text-analytics-project"><span class="header-section-number">15.4</span> Capstone D: Transition Risk Text Analytics Project</h2>
+<section id="project-rationale-3" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="project-rationale-3"><span class="header-section-number">15.4.1</span> Project rationale</h3>
+<p>Transition risk is embedded in policies, ESG disclosures, planning documents, regulation, retrofit expectations, market sentiment and investor communication. NLP can help identify signals that matter for real estate assets and portfolios.</p>
+</section>
+<section id="research-professional-problem-3" class="level3" data-number="15.4.2">
+<h3 data-number="15.4.2" class="anchored" data-anchor-id="research-professional-problem-3"><span class="header-section-number">15.4.2</span> Research / professional problem</h3>
+<p>Can Python-based text analytics identify transition-risk signals in ESG reports, planning documents or policy texts relevant to real estate investors?</p>
+</section>
+<section id="guiding-questions-3" class="level3" data-number="15.4.3">
+<h3 data-number="15.4.3" class="anchored" data-anchor-id="guiding-questions-3"><span class="header-section-number">15.4.3</span> Guiding questions</h3>
+<ul>
+<li>Which terms and themes indicate transition-risk exposure?</li>
+<li>How do documents discuss energy efficiency, retrofit, carbon performance, regulation and stranded assets?</li>
+<li>Do different document types emphasise different risk signals?</li>
+<li>How should automated text analysis be combined with expert interpretation?</li>
+</ul>
+</section>
+<section id="required-data-types-3" class="level3" data-number="15.4.4">
+<h3 data-number="15.4.4" class="anchored" data-anchor-id="required-data-types-3"><span class="header-section-number">15.4.4</span> Required data types</h3>
+<ul>
+<li>ESG reports.</li>
+<li>Planning documents.</li>
+<li>Policy documents.</li>
+<li>Market commentary or investor disclosures where permitted.</li>
+<li>Transition-risk keyword dictionary.</li>
+</ul>
+</section>
+<section id="python-libraries-3" class="level3" data-number="15.4.5">
+<h3 data-number="15.4.5" class="anchored" data-anchor-id="python-libraries-3"><span class="header-section-number">15.4.5</span> Python libraries</h3>
+<p><code>pandas</code>, <code>nltk</code>, <code>spaCy</code>, <code>scikit-learn</code>, <code>matplotlib</code>, <code>plotly</code>, <code>beautifulsoup4</code> where appropriate.</p>
+</section>
+<section id="analytic-workflow-3" class="level3" data-number="15.4.6">
+<h3 data-number="15.4.6" class="anchored" data-anchor-id="analytic-workflow-3"><span class="header-section-number">15.4.6</span> Analytic workflow</h3>
+<ol type="1">
+<li>Define the document corpus.</li>
+<li>Verify document access and use rights.</li>
+<li>Extract and clean text.</li>
+<li>Build a transition-risk keyword dictionary.</li>
+<li>Apply tokenisation and frequency analysis.</li>
+<li>Use TF-IDF or simple classification where appropriate.</li>
+<li>Compare transition-risk signals across documents.</li>
+<li>Produce a document-risk summary and interpretation.</li>
+</ol>
+</section>
+<section id="expected-outputs-3" class="level3" data-number="15.4.7">
+<h3 data-number="15.4.7" class="anchored" data-anchor-id="expected-outputs-3"><span class="header-section-number">15.4.7</span> Expected outputs</h3>
+<ul>
+<li>Cleaned text corpus.</li>
+<li>Transition-risk dictionary.</li>
+<li>Keyword and TF-IDF analysis.</li>
+<li>Document comparison table.</li>
+<li>Quarto text analytics report.</li>
+</ul>
+</section>
+<section id="dashboard-report-expectations-3" class="level3" data-number="15.4.8">
+<h3 data-number="15.4.8" class="anchored" data-anchor-id="dashboard-report-expectations-3"><span class="header-section-number">15.4.8</span> Dashboard / report expectations</h3>
+<p>The report should include corpus description, text-cleaning method, transition-risk framework, key findings, examples of document-level signals, limitations and implications for investors.</p>
+</section>
+<section id="assessment-criteria-3" class="level3" data-number="15.4.9">
+<h3 data-number="15.4.9" class="anchored" data-anchor-id="assessment-criteria-3"><span class="header-section-number">15.4.9</span> Assessment criteria</h3>
+<ul>
+<li>Appropriateness of corpus selection.</li>
+<li>Quality of text preprocessing.</li>
+<li>Transparency of keyword dictionary.</li>
+<li>Validity of interpretation.</li>
+<li>Careful handling of automated text-analysis limitations.</li>
+<li>Professional communication.</li>
+</ul>
+</section>
+<section id="extension-potential-3" class="level3" data-number="15.4.10">
+<h3 data-number="15.4.10" class="anchored" data-anchor-id="extension-potential-3"><span class="header-section-number">15.4.10</span> Extension potential</h3>
+<p>The project can support ESG research, policy analysis, transition-risk screening, investor reporting, journal publication or development of a larger document-intelligence tool.</p>
+</section>
+</section>
+</section>
+<section id="recommended-learning-resources" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Recommended Learning Resources</h1>
+<p>The resource list should be finalised by the instructor and adapted to country context, institutional data access, commercial permissions and the learner’s project focus. The following categories and widely known resources are recommended.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resource Category</th>
+<th>Recommended Resource Type</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Python foundations</td>
+<td>Python official documentation and tutorial</td>
+<td>Syntax, functions, control flow and standard library.</td>
+</tr>
+<tr class="even">
+<td>Jupyter</td>
+<td>JupyterLab documentation</td>
+<td>Notebook workflow and interactive analysis.</td>
+</tr>
+<tr class="odd">
+<td>pandas</td>
+<td>pandas documentation and user guide</td>
+<td>Data cleaning, transformation, joins and time-series handling.</td>
+</tr>
+<tr class="even">
+<td>NumPy</td>
+<td>NumPy documentation</td>
+<td>Numerical operations and arrays.</td>
+</tr>
+<tr class="odd">
+<td>Visualisation</td>
+<td>Matplotlib, seaborn and Plotly documentation</td>
+<td>Static, statistical and interactive visualisation.</td>
+</tr>
+<tr class="even">
+<td>Statistics and econometrics</td>
+<td>statsmodels documentation</td>
+<td>Regression, diagnostics and time-series modelling.</td>
+</tr>
+<tr class="odd">
+<td>Machine learning</td>
+<td>scikit-learn documentation</td>
+<td>Supervised learning, preprocessing, pipelines and evaluation.</td>
+</tr>
+<tr class="even">
+<td>Geospatial analysis</td>
+<td>GeoPandas, Shapely and Folium documentation</td>
+<td>Spatial joins, mapping and interactive maps.</td>
+</tr>
+<tr class="odd">
+<td>Climate data</td>
+<td>National climate portals, environmental agencies and open climate-data platforms</td>
+<td>Physical risk, flood risk and exposure indicators, to be verified.</td>
+</tr>
+<tr class="even">
+<td>Finance data</td>
+<td>Central banks, statistical offices, stock exchanges, finance-data APIs or commercial data providers</td>
+<td>REITs, interest rates, inflation and market data.</td>
+</tr>
+<tr class="odd">
+<td>Real estate data</td>
+<td>Land registry, property portals, valuation datasets, institutional databases or commercial providers</td>
+<td>Transaction and valuation analytics, subject to rights.</td>
+</tr>
+<tr class="even">
+<td>ESG and transition-risk documents</td>
+<td>Company reports, regulator documents, planning documents and policy portals</td>
+<td>NLP and transition-risk signal analysis.</td>
+</tr>
+<tr class="odd">
+<td>Dashboards</td>
+<td>Streamlit or Dash documentation</td>
+<td>Applied dashboard development.</td>
+</tr>
+<tr class="even">
+<td>Reproducible reporting</td>
+<td>Quarto documentation</td>
+<td>Technical reports, project documentation and publication-ready outputs.</td>
+</tr>
+<tr class="odd">
+<td>Version control</td>
+<td>GitHub Docs and Git documentation</td>
+<td>Repository management, documentation and collaboration.</td>
+</tr>
+</tbody>
+</table>
+<p>Resource verification requirements:</p>
+<ul>
+<li>Dataset access must be checked before teaching begins.</li>
+<li>Commercial data must not be redistributed without permission.</li>
+<li>Sensitive property-level data must be anonymised or replaced with synthetic examples.</li>
+<li>Public datasets must be checked for licensing and citation requirements.</li>
+<li>Readings should be updated to include current real estate climate-risk literature, flood-risk capitalisation studies, transition-risk scholarship and relevant professional standards.</li>
+</ul>
+</section>
+<section id="reproducible-workflow-and-mlops-introduction" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Reproducible Workflow and MLOps Introduction</h1>
+<p>This curriculum introduces reproducible workflow and beginner-level MLOps as practical habits rather than advanced engineering abstractions.</p>
+<section id="folder-structure" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="folder-structure"><span class="header-section-number">17.1</span> Folder Structure</h2>
+<p>The learner should use a consistent folder structure for all projects. Raw data should be separated from processed data. Scripts, notebooks, reports, figures and dashboard files should be clearly organised. Each project should include a <code>README.md</code> explaining the problem, data sources, workflow, dependencies and outputs.</p>
+</section>
+<section id="notebook-discipline" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="notebook-discipline"><span class="header-section-number">17.2</span> Notebook Discipline</h2>
+<p>Notebooks should be used for exploration and teaching, but they must remain readable and reproducible. Each notebook should have a title, purpose statement, data source note, cleaning section, analysis section, interpretation section and limitations section. Temporary experiments should be separated from final analytical notebooks.</p>
+</section>
+<section id="quarto-reports" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="quarto-reports"><span class="header-section-number">17.3</span> Quarto Reports</h2>
+<p>Quarto should be used to produce professional reports that integrate code, tables, figures, interpretation and methodological notes. By the end of the programme, the learner should be able to prepare HTML and PDF reports suitable for academic, consultancy or internal professional audiences.</p>
+</section>
+<section id="git-and-github" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="git-and-github"><span class="header-section-number">17.4</span> Git and GitHub</h2>
+<p>Git should be introduced as a way of tracking work, not as an abstract software-development tool. The learner should practise committing meaningful changes, writing commit messages, pushing to GitHub, maintaining a README and using repositories as a professional portfolio.</p>
+</section>
+<section id="documentation" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="documentation"><span class="header-section-number">17.5</span> Documentation</h2>
+<p>Documentation should include data dictionaries, cleaning logs, modelling assumptions, package requirements, project limitations and stakeholder interpretation notes. Documentation is assessed because it determines whether the work can support research, consultancy or product development.</p>
+</section>
+<section id="environment-management" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="environment-management"><span class="header-section-number">17.6</span> Environment Management</h2>
+<p>The learner should record package dependencies using <code>requirements.txt</code>, <code>environment.yml</code> or an equivalent environment file. This supports reproducibility and reduces the risk that a project cannot be rerun later.</p>
+</section>
+<section id="model-versioning-concepts" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="model-versioning-concepts"><span class="header-section-number">17.7</span> Model Versioning Concepts</h2>
+<p>At an introductory level, the learner should understand that models have versions, training data, assumptions, parameters, evaluation metrics and intended-use boundaries. A simple model card should be used for Week 7 and the final capstone where relevant.</p>
+</section>
+<section id="basic-deployment-concepts" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="basic-deployment-concepts"><span class="header-section-number">17.8</span> Basic Deployment Concepts</h2>
+<p>Deployment should be introduced through Streamlit or Dash. The learner should understand the difference between a local prototype, a shared internal dashboard and a public-facing deployed tool. Public deployment should only occur where data rights, confidentiality, security and ethical considerations have been addressed.</p>
+</section>
+<section id="ethical-data-handling" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="ethical-data-handling"><span class="header-section-number">17.9</span> Ethical Data Handling</h2>
+<p>Property-level, financial and location-based data may raise privacy, commercial and ethical issues. The learner should avoid exposing sensitive records, should anonymise where needed and should document data provenance and access rights.</p>
+</section>
+<section id="reproducible-research-practices" class="level2" data-number="17.10">
+<h2 data-number="17.10" class="anchored" data-anchor-id="reproducible-research-practices"><span class="header-section-number">17.10</span> Reproducible Research Practices</h2>
+<p>The programme should encourage transparent workflows, documented assumptions, clear code, version-controlled projects, reproducible reports and cautious interpretation. These practices are essential for journal publications, grant-funded projects, consultancy and professional analytics.</p>
+</section>
+</section>
+<section id="professional-outputs-and-portfolio" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Professional Outputs and Portfolio</h1>
+<p>By the end of the programme, the learner should have the following portfolio outputs:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Output</th>
+<th>Description</th>
+<th>Professional Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cleaned datasets</td>
+<td>Analysis-ready property, risk, financial, spatial or text datasets.</td>
+<td>Evidence of data-management competence.</td>
+</tr>
+<tr class="even">
+<td>Data-quality report</td>
+<td>Missing values, duplicates, invalid values, joins and cleaning decisions.</td>
+<td>Supports auditability and professional reliability.</td>
+</tr>
+<tr class="odd">
+<td>EDA notebook</td>
+<td>Exploratory analysis with charts, summaries and interpretation.</td>
+<td>Demonstrates ability to diagnose data patterns.</td>
+</tr>
+<tr class="even">
+<td>Regression report</td>
+<td>Quarto report estimating a pricing or risk-capitalisation model.</td>
+<td>Supports research and valuation analysis.</td>
+</tr>
+<tr class="odd">
+<td>Machine-learning notebook</td>
+<td>Predictive or classification model with evaluation and model card.</td>
+<td>Demonstrates applied predictive analytics.</td>
+</tr>
+<tr class="even">
+<td>Geospatial flood-risk map</td>
+<td>Static or interactive map showing exposure patterns.</td>
+<td>Supports spatial risk communication.</td>
+</tr>
+<tr class="odd">
+<td>NLP transition-risk analysis</td>
+<td>Text analytics of ESG, policy or planning documents.</td>
+<td>Supports transition-risk research and disclosure analysis.</td>
+</tr>
+<tr class="even">
+<td>Dashboard prototype</td>
+<td>Streamlit or Dash decision-support interface.</td>
+<td>Supports consultancy, stakeholder communication and product development.</td>
+</tr>
+<tr class="odd">
+<td>GitHub repository</td>
+<td>Organised, documented and version-controlled portfolio.</td>
+<td>Demonstrates reproducible professional workflow.</td>
+</tr>
+<tr class="even">
+<td>Quarto technical report</td>
+<td>Integrated analysis report with code, tables, figures and interpretation.</td>
+<td>Suitable for academic, consultancy or grant outputs.</td>
+</tr>
+<tr class="odd">
+<td>Capstone presentation</td>
+<td>Professional presentation of final project.</td>
+<td>Supports stakeholder communication and project defence.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="progression-route-beyond-12-weeks" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Progression Route Beyond 12 Weeks</h1>
+<p>The 12-week curriculum establishes a beginner-to-intermediate applied Python foundation. The learner’s next pathway should move toward advanced research and professional analytics.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Advanced Area</th>
+<th>Purpose</th>
+<th>Possible Learning Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Advanced econometrics</td>
+<td>Strengthen causal and empirical modelling for real estate research.</td>
+<td>Panel data, fixed effects, instrumental variables and robust inference.</td>
+</tr>
+<tr class="even">
+<td>Causal inference</td>
+<td>Improve interpretation of climate-risk and policy effects.</td>
+<td>Difference-in-differences, matching, synthetic control and event studies.</td>
+</tr>
+<tr class="odd">
+<td>Spatial econometrics</td>
+<td>Address spatial dependence in property markets and climate exposure.</td>
+<td>Spatial lag models, spatial error models and geographically weighted regression.</td>
+</tr>
+<tr class="even">
+<td>Bayesian modelling</td>
+<td>Model uncertainty and probabilistic risk.</td>
+<td>Bayesian regression, hierarchical models and uncertainty intervals.</td>
+</tr>
+<tr class="odd">
+<td>Advanced machine learning</td>
+<td>Improve predictive modelling and feature engineering.</td>
+<td>Gradient boosting, model explainability and pipeline optimisation.</td>
+</tr>
+<tr class="even">
+<td>Deep learning</td>
+<td>Use only where justified by data and problem scale.</td>
+<td>Image, satellite, remote-sensing or large-scale text applications.</td>
+</tr>
+<tr class="odd">
+<td>Climate scenario analysis</td>
+<td>Link assets to future risk pathways.</td>
+<td>Climate scenarios, physical-risk projections and transition pathways.</td>
+</tr>
+<tr class="even">
+<td>Asset-level risk modelling</td>
+<td>Build granular property and portfolio risk tools.</td>
+<td>Asset scoring, resilience indicators and valuation adjustment frameworks.</td>
+</tr>
+<tr class="odd">
+<td>Portfolio risk analytics</td>
+<td>Extend from asset-level to portfolio-level decision-making.</td>
+<td>Diversification, exposure concentration and scenario stress testing.</td>
+</tr>
+<tr class="even">
+<td>Dashboard and product development</td>
+<td>Move from prototype to professional tool.</td>
+<td>User testing, deployment, authentication and cloud hosting.</td>
+</tr>
+<tr class="odd">
+<td>Cloud deployment</td>
+<td>Share tools securely and scalably.</td>
+<td>Streamlit Community Cloud, cloud platforms or institutional servers, subject to governance.</td>
+</tr>
+<tr class="even">
+<td>Research publication pipeline</td>
+<td>Convert analytics into scholarly outputs.</td>
+<td>Manuscript structure, methods reporting, reproducible appendices and data documentation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alignment-matrix" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Alignment Matrix</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Uploaded-File Requirement</th>
+<th>Curriculum Response</th>
+<th>Where It Appears</th>
+<th>Expected Learner Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Non-generic Python training aligned with real estate and climate-risk analytics</td>
+<td>Domain-specific examples are embedded from Week 1 onward.</td>
+<td>Programme rationale, curriculum map, weekly plans</td>
+<td>Learner studies Python through relevant professional problems.</td>
+</tr>
+<tr class="even">
+<td>Target learner is a researcher, academic and real estate finance/climate-risk professional</td>
+<td>Learner profile and pedagogy are designed for advanced conceptual expertise and beginner programming.</td>
+<td>Learner profile, design principles, instructor notes</td>
+<td>Learner receives appropriate pacing and professional relevance.</td>
+</tr>
+<tr class="odd">
+<td>Beginner-to-intermediate Python with advanced pathway</td>
+<td>Foundations are taught first, followed by applied analytics and post-programme progression.</td>
+<td>Weeks 1-12, progression route</td>
+<td>Learner develops from basic syntax to applied analytics readiness.</td>
+</tr>
+<tr class="even">
+<td>Strong quantitative and statistical background</td>
+<td>Regression, econometrics, time series and machine learning are included without over-explaining basic research logic.</td>
+<td>Weeks 6-8, capstones</td>
+<td>Learner converts statistical knowledge into Python workflows.</td>
+</tr>
+<tr class="odd">
+<td>Need to clean and manage large property, climate, transaction and financial datasets</td>
+<td>Data cleaning, pandas, NumPy and quality assurance are central.</td>
+<td>Weeks 3-4</td>
+<td>Learner can prepare analysis-ready datasets.</td>
+</tr>
+<tr class="even">
+<td>Excel, CSV, APIs, geospatial files and public datasets</td>
+<td>Data import and data-source strategy cover these formats.</td>
+<td>Week 3, dataset strategy</td>
+<td>Learner can work across common data sources.</td>
+</tr>
+<tr class="odd">
+<td>Exploratory data analysis</td>
+<td>EDA is explicitly taught with professional visual outputs.</td>
+<td>Week 5</td>
+<td>Learner can diagnose and communicate data patterns.</td>
+</tr>
+<tr class="even">
+<td>Professional charts, tables and dashboards</td>
+<td>Visualisation and dashboard development are core components.</td>
+<td>Weeks 5 and 11</td>
+<td>Learner can produce stakeholder-ready outputs.</td>
+</tr>
+<tr class="odd">
+<td>Statistical and econometric modelling</td>
+<td>Regression and real estate pricing models are included.</td>
+<td>Week 6</td>
+<td>Learner can estimate and interpret pricing/risk models.</td>
+</tr>
+<tr class="even">
+<td>Machine learning for exposure, discounts, vulnerability and resilience</td>
+<td>ML week focuses on prediction, classification and risk scoring.</td>
+<td>Week 7</td>
+<td>Learner can build and evaluate applied predictive models.</td>
+</tr>
+<tr class="odd">
+<td>Time-series analysis for REITs, housing prices, rates, inflation and shocks</td>
+<td>Time-series module includes returns, volatility and event indicators.</td>
+<td>Week 8</td>
+<td>Learner can analyse temporal market and shock dynamics.</td>
+</tr>
+<tr class="even">
+<td>Geospatial analysis</td>
+<td>Spatial joins, mapping and flood-exposure analysis are included.</td>
+<td>Week 9</td>
+<td>Learner can map and analyse property exposure.</td>
+</tr>
+<tr class="odd">
+<td>Climate-risk and flood-risk data integration</td>
+<td>Property, risk, local authority and vulnerability data are joined and modelled.</td>
+<td>Weeks 3, 4, 6, 9, 11</td>
+<td>Learner can integrate multi-source risk evidence.</td>
+</tr>
+<tr class="even">
+<td>NLP for policy, planning, ESG and sentiment</td>
+<td>NLP module targets transition-risk document analysis.</td>
+<td>Week 10</td>
+<td>Learner can extract transition-risk signals from text.</td>
+</tr>
+<tr class="odd">
+<td>Dashboard development with Streamlit or Dash</td>
+<td>Dashboard prototype is a required professional output.</td>
+<td>Week 11</td>
+<td>Learner can build a climate-risk communication tool.</td>
+</tr>
+<tr class="even">
+<td>MLOps and reproducible workflows</td>
+<td>GitHub, Quarto, folder structures, documentation, environment management and deployment concepts are included.</td>
+<td>Weeks 1, 7, 11, 12, reproducible workflow section</td>
+<td>Learner can produce reproducible research and professional workflows.</td>
+</tr>
+<tr class="odd">
+<td>Practical assessments preferred over theoretical tests</td>
+<td>Assessment design prioritises exercises, projects, portfolio and presentation.</td>
+<td>Assessment design and rubric</td>
+<td>Learner is assessed through authentic outputs.</td>
+</tr>
+<tr class="even">
+<td>Capstone project options</td>
+<td>Four capstone briefs are developed from the uploaded use cases.</td>
+<td>Capstone section</td>
+<td>Learner can select a project aligned with research and professional goals.</td>
+</tr>
+<tr class="odd">
+<td>Detailed syllabus and learning pathway</td>
+<td>Full weekly map, teaching plans, exercises, datasets, assessments and progression route are included.</td>
+<td>Entire document</td>
+<td>Learner and instructor have an implementation-ready curriculum.</td>
+</tr>
+<tr class="even">
+<td>Future research, consultancy, grant and product development</td>
+<td>Portfolio outputs and extension pathways are included.</td>
+<td>Professional outputs, progression route, capstones</td>
+<td>Learner can extend training into academic and professional outputs.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="implementation-notes-for-the-instructor" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Implementation Notes for the Instructor</h1>
+<p>This curriculum should be taught as a professional analytics programme, not as a coding bootcamp. The learner is not a general beginner in research or quantitative reasoning. The main teaching challenge is to scaffold programming without oversimplifying the domain.</p>
+<p>Pacing should be firm but supportive. Weeks 1-3 must establish confidence in the environment, syntax and data cleaning. If these weeks are rushed, later modelling and dashboard work will become fragile. However, examples should remain domain-specific from the beginning so that the learner sees immediate relevance.</p>
+<p>The instructor should avoid generic datasets unless they are used only for a very short technical demonstration. Exercises should use property, valuation, flood-risk, climate-risk, financial, geospatial, ESG or policy examples. Where real data cannot be used, synthetic data should be constructed to mirror the structure of real professional datasets.</p>
+<p>Debugging should be treated as a normal part of analytic practice. The learner should be taught to read error messages, inspect objects, check data types, verify joins and test code incrementally.</p>
+<p>Data limitations must be discussed explicitly. Real estate and climate-risk datasets are often incomplete, proprietary, spatially inconsistent or governed by licensing restrictions. The learner should be trained to document limitations rather than hide them.</p>
+<p>Syntax should be balanced with interpretation. Every coding exercise should end with a short professional interpretation: what does the output mean for valuation, investment, risk, policy, resilience, insurance, mortgageability or market liquidity?</p>
+<p>The instructor should require documentation from the beginning. README files, data dictionaries, cleaning logs and Quarto notes are not optional extras. They are part of the evidence standard required for research, consultancy and professional analytics.</p>
+<p>The final capstone should be selected by Week 5 so that exercises from Weeks 6-11 can gradually feed into the final project. The capstone should not be treated as a separate end-of-course assignment but as an integrated analytical system built over time.</p>
+</section>
+<section id="quality-control-checklist" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Quality-Control Checklist</h1>
+<p>Use this checklist before finalising or delivering the programme.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Requirement</th>
+<th>Confirmed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>The programme is structured as 12 weeks / 90 days.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>The weekly workload assumes approximately 4-6 hours per week.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>The curriculum begins with Python foundations.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>The curriculum progresses into applied analytics.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>The curriculum is designed for a PhD-trained real estate finance and climate-risk professional.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>The curriculum avoids generic Python training.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Real estate and climate-risk use cases are embedded throughout.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Flood risk is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Physical climate risk is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Transition risk is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Real estate pricing and valuation are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>REITs and financial-market shocks are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Infrastructure shocks and resilience are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Investment decision-making is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Python foundations include variables, data types, functions, loops and conditionals.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Data analysis with pandas and NumPy is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Visualisation with matplotlib, seaborn and plotly is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Excel, CSV, API and web-sourced data workflows are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Statistical analysis and regression modelling are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Machine learning for prediction and classification is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Time-series analysis is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Geospatial analysis is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>NLP for ESG, policy, planning and transition-risk documents is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Dashboard development with Streamlit or Dash is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>GitHub, notebooks, documentation, Quarto and reproducible workflow are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Assessment tasks are practical rather than purely theoretical.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Weekly coding exercises are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Short applied tasks are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>A mid-programme mini-project is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>A final capstone project is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Four capstone options are provided.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Dataset types are identified without fabricating access.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Recommended resources are provided as verifiable categories and documentation sources.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Professional outputs and portfolio artifacts are specified.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>A progression route beyond 12 weeks is included.</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Instructor implementation notes are included.</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>The curriculum is packaged as a Quarto <code>.qmd</code> document.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
