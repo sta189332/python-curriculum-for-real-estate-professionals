@@ -107,30 +107,13 @@
  
 
 
-\usepackage{microtype}
-\usepackage{fvextra}
-\usepackage{caption}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\captionsetup[figure]{labelfont=bf,textfont=normalfont,labelsep=colon}
-\captionsetup[table]{labelfont=bf,textfont=normalfont,labelsep=colon}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\usepackage{pdflscape}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=3em
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
-\definecolor{quarto-callout-color}{HTML}{909090}
-\definecolor{quarto-callout-note-color}{HTML}{0758E5}
-\definecolor{quarto-callout-important-color}{HTML}{CC1914}
-\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
-\definecolor{quarto-callout-tip-color}{HTML}{00A047}
-\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
-\definecolor{quarto-callout-color-frame}{HTML}{acacac}
-\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
-\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
-\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
-\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
-\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.8em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{5.3em}{4.8em}}
 \makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
@@ -178,7 +161,7 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={Python for Applied Real Estate and Climate-Risk Analytics},
-  pdfauthor={{[}Instructor / Institution / Programme Team{]}},
+  pdfauthor={James Daniel (PhD)},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -197,35 +180,16 @@
 \subtitle{A 12-Week Professional Curriculum for Flood Risk, Physical
 Climate Risk, Transition Risk, Valuation, REITs and Investment
 Decision-Making}
-\author{{[}Instructor / Institution / Programme Team{]}}
+\author{James Daniel (PhD)}
 \date{June 13, 2026}
 \begin{document}
 \maketitle
 
 \renewcommand*\contentsname{Table of contents}
 {
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
-
-\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, breakable, colback=white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm]
-\begin{minipage}[t]{5.5mm}
-\textcolor{quarto-callout-note-color}{\faInfo}
-\end{minipage}%
-\begin{minipage}[t]{\textwidth - 5.5mm}
-
-\vspace{-3mm}\textbf{Source basis}\vspace{3mm}
-
-This curriculum is designed from the uploaded requirements document,
-which specifies a beginner-to-intermediate Python pathway for a
-PhD-trained real estate finance and climate-risk professional,
-structured over 12 weeks / 90 days at 4-6 hours per week, with direct
-application to flood risk, physical climate risk, transition risk, real
-estate pricing, valuation, REITs, investment analytics, reproducible
-workflows and future dashboard/product development.
-
-\end{minipage}%
-\end{tcolorbox}
 
 \section{Programme Title}\label{programme-title}
 
@@ -615,9 +579,12 @@ publication. \\
 
 \section{Full 12-Week Curriculum Map}\label{full-12-week-curriculum-map}
 
+\clearpage
+\begin{landscape}
 \begingroup
 \scriptsize
 \setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.92}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -755,6 +722,8 @@ repository, Quarto report and presentation \\
 }
 
 \endgroup
+\end{landscape}
+\clearpage
 
 \section{Weekly Teaching Plan}\label{weekly-teaching-plan}
 
@@ -2385,7 +2354,7 @@ appendices and data documentation. \\
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Uploaded-File Requirement
+Curriculum Requirement
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Curriculum Response
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright

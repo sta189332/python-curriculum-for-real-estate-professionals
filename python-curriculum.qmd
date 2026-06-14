@@ -1,7 +1,7 @@
 ---
 title: "Python for Applied Real Estate and Climate-Risk Analytics"
 subtitle: "A 12-Week Professional Curriculum for Flood Risk, Physical Climate Risk, Transition Risk, Valuation, REITs and Investment Decision-Making"
-author: "[Instructor / Institution / Programme Team]"
+author: "James Daniel (PhD)"
 date: today
 date-format: "MMMM D, YYYY"
 number-sections: true
@@ -34,7 +34,7 @@ format:
       light: cosmo
       dark: darkly
     toc: true
-    toc-depth: 3
+    toc-depth: 2
     number-sections: true
     code-copy: true
     code-overflow: wrap
@@ -63,7 +63,7 @@ format:
       - left=0.9in
       - right=0.9in
     toc: true
-    toc-depth: 3
+    toc-depth: 2
     number-sections: true
     number-depth: 3
     colorlinks: true
@@ -73,15 +73,14 @@ format:
     keep-tex: true
     include-in-header:
       text: |
-        \usepackage{microtype}
-        \usepackage{fvextra}
-        \usepackage{caption}
-        \usepackage{booktabs}
-        \usepackage{longtable}
-        \usepackage{array}
-        \captionsetup[figure]{labelfont=bf,textfont=normalfont,labelsep=colon}
-        \captionsetup[table]{labelfont=bf,textfont=normalfont,labelsep=colon}
-        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+        \usepackage{pdflscape}
+        \hyphenpenalty=10000
+        \exhyphenpenalty=10000
+        \emergencystretch=3em
+        \makeatletter
+        \renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.8em}}
+        \renewcommand*\l@subsubsection{\@dottedtocline{3}{5.3em}{4.8em}}
+        \makeatother
   docx:
     toc: true
     toc-depth: 3
@@ -91,9 +90,6 @@ format:
     fig-height: 4.5
     fig-cap-location: bottom
 ---
-::: {.callout-note appearance="simple" title="Source basis"}
-This curriculum is designed from the uploaded requirements document, which specifies a beginner-to-intermediate Python pathway for a PhD-trained real estate finance and climate-risk professional, structured over 12 weeks / 90 days at 4-6 hours per week, with direct application to flood risk, physical climate risk, transition risk, real estate pricing, valuation, REITs, investment analytics, reproducible workflows and future dashboard/product development.
-:::
 
 ## Programme Title
 
@@ -236,12 +232,13 @@ Recommended project structure:
 ## Full 12-Week Curriculum Map
 
 ```{=latex}
+\clearpage
+\begin{landscape}
 \begingroup
 \scriptsize
 \setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.92}
 ```
-
-::: {.wide-table}
 
 | Week | Theme | Main Topic | Learning Outcomes | Python Concepts | Domain Focus | Recommended Libraries | Practical Exercise | Dataset or Data Type | Independent Task | Expected Output / Portfolio Artifact |
 |---:|---|---|---|---|---|---|---|---|---|---|
@@ -258,10 +255,10 @@ Recommended project structure:
 | 11 | Dashboards | Climate-risk communication through Streamlit or Dash | Build a prototype decision-support dashboard | App structure, widgets, filters, charts, maps | Investor, valuer, insurer, policymaker and asset-manager use cases | streamlit or dash, plotly, pandas, folium | Build a property climate-risk dashboard prototype | Processed property, risk and map data | Prepare dashboard documentation | Working dashboard prototype |
 | 12 | Capstone integration | Reproducible workflow, GitHub, Quarto report and presentation | Integrate data, models, maps, dashboard and reporting | Project packaging, documentation, version control | Applied research, consultancy and product pathway | Git, GitHub, Quarto, selected project libraries | Present capstone workflow and findings | Learner-selected capstone dataset | Complete final project and presentation | GitHub repository, Quarto report and presentation |
 
-:::
-
 ```{=latex}
 \endgroup
+\end{landscape}
+\clearpage
 ```
 
 ## Weekly Teaching Plan
@@ -1024,7 +1021,7 @@ The 12-week curriculum establishes a beginner-to-intermediate applied Python fou
 
 ## Alignment Matrix
 
-| Uploaded-File Requirement | Curriculum Response | Where It Appears | Expected Learner Outcome |
+| Curriculum Requirement | Curriculum Response | Where It Appears | Expected Learner Outcome |
 |---|---|---|---|
 | Non-generic Python training aligned with real estate and climate-risk analytics | Domain-specific examples are embedded from Week 1 onward. | Programme rationale, curriculum map, weekly plans | Learner studies Python through relevant professional problems. |
 | Target learner is a researcher, academic and real estate finance/climate-risk professional | Learner profile and pedagogy are designed for advanced conceptual expertise and beginner programming. | Learner profile, design principles, instructor notes | Learner receives appropriate pacing and professional relevance. |
